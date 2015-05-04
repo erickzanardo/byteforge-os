@@ -154,3 +154,6 @@ bindsym $mod+F12 exec synapse
 
 # Startup script
 exec_always ~/.i3/bin/init.sh
+
+# System font
+font pango: 8_bit_1_6 12px

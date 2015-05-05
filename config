@@ -147,7 +147,7 @@ bindsym $mod+r mode "resize"
 bindsym $mod+F12 exec synapse
 
 # Startup script
-exec_always ~/.i3/bin/init.sh
+exec_always i3init
 
 # System font
 font pango: Retroville NC 16px
@@ -155,7 +155,7 @@ font pango: Retroville NC 16px
 # Bar
 bar {
   font pango: Retroville NC 16px
-  status_command ~/.i3/bin/status_bar.sh
+  status_command ~/.i3/bin/i3statusbar
   colors {
     focused_workspace #164D1D #00CF1C #164D1D
   }

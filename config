@@ -150,11 +150,11 @@ bindsym $mod+F12 exec synapse
 exec_always ~/.i3/bin/init.sh
 
 # System font
-font pango: 8_bit_1_6 16px
+font pango: Retroville NC 16px
 
 # Bar
 bar {
-  font pango: 8_bit_1_6 16px
+  font pango: Retroville NC 16px
   status_command ~/.i3/bin/status_bar.sh
   colors {
     focused_workspace #164D1D #00CF1C #164D1D

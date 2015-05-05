@@ -1,6 +1,7 @@
 #!/bin/bash
 while :
 do
-  now=$(date +"%T")
+  now=$(date +"%H:%M")
   echo "Now: $now"
+  sleep 30
 done

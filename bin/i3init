@@ -1,1 +1,2 @@
 feh --bg-scale ~/.i3/images/wallpaper
+setxkbmap -layout "br" -model "intl," -option "grp:shift_toggle"

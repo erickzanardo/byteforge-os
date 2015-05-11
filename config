@@ -143,9 +143,6 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Custom shortcuts
-bindsym $mod+m exec keycheese
-
 # Startup script
 exec_always i3init
 
@@ -164,3 +161,19 @@ bar {
 # Font color
 client.focused #164D1D #000000 #179128 #ffffff
 
+# Mouse control
+mode "mouse control" {
+  bindsym w exec xdotool mousemove_relative --sync -- 0 -10 
+  bindsym a exec xdotool mousemove_relative --sync -- -10 0 
+  bindsym s exec xdotool mousemove_relative --sync -- 0 10 
+  bindsym d exec xdotool mousemove_relative --sync -- 10 0 
+
+  bindsym o exec xdotool click 1
+  bindsym p exec xdotool click 3 
+  bindsym k exec xdotool click 4 
+  bindsym m exec xdotool click 5 
+
+  bindsym Escape mode "default" 
+}
+
+bindsym $mod+m mode "mouse control"

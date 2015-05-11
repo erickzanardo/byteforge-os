@@ -144,7 +144,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Custom shortcuts
-bindsym $mod+F12 exec synapse
+bindsym $mod+m exec keycheese
 
 # Startup script
 exec_always i3init

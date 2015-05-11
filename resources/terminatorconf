@@ -1,0 +1,22 @@
+[global_config]
+[keybindings]
+[profiles]
+  [[default]]
+    use_system_font = False
+    login_shell = True
+    background_darkness = 0.93
+    background_type = transparent
+    background_image = None
+    cursor_color = "#0d5f09"
+    foreground_color = "#00ff00"
+    show_titlebar = False
+    font = RetroVille NC 10
+[layouts]
+  [[default]]
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+    [[[window0]]]
+      type = Window
+      parent = ""
+[plugins]

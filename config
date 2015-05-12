@@ -163,15 +163,15 @@ client.focused #164D1D #000000 #179128 #ffffff
 
 # Mouse control
 mode "mouse control" {
-  bindsym w exec xdotool mousemove_relative --sync -- 0 -10 
-  bindsym a exec xdotool mousemove_relative --sync -- -10 0 
-  bindsym s exec xdotool mousemove_relative --sync -- 0 10 
-  bindsym d exec xdotool mousemove_relative --sync -- 10 0 
+  bindsym w exec xdotool mousemove_relative -- 0 -10 
+  bindsym a exec xdotool mousemove_relative -- -10 0 
+  bindsym s exec xdotool mousemove_relative -- 0 10 
+  bindsym d exec xdotool mousemove_relative -- 10 0 
 
-  bindsym Shift+w exec xdotool mousemove_relative --sync -- 0 -50 
-  bindsym Shift+a exec xdotool mousemove_relative --sync -- -50 0 
-  bindsym Shift+s exec xdotool mousemove_relative --sync -- 0 50 
-  bindsym Shift+d exec xdotool mousemove_relative --sync -- 50 0 
+  bindsym Shift+w exec xdotool mousemove_relative -- 0 -50 
+  bindsym Shift+a exec xdotool mousemove_relative -- -50 0 
+  bindsym Shift+s exec xdotool mousemove_relative -- 0 50 
+  bindsym Shift+d exec xdotool mousemove_relative -- 50 0 
 
   bindsym o exec xdotool click 1
   bindsym p exec xdotool click 3 
@@ -183,4 +183,17 @@ mode "mouse control" {
 
 bindsym $mod+m mode "mouse control"
 
+# Exec command dialog (like Win+R on windows)
 bindsym $mod+c exec i3-input -F 'exec %s' -P 'Command: '
+
+# System functions
+set $sysmode "(S)hutdown (L)ogout (R)eboot"
+mode $sysmode {
+  bindsym s exec --no-startup-id ~/.i3/bin/i3shutdown, mode "default"
+  bindsym l exec --no-startup-id ~/.i3/bin/i3logout logout, mode "default"
+  bindsym r exec --no-startup-id ~/.i3/bin/i3reboot, mode "default"
+
+  bindsym Escape mode "default"
+}
+
+bindsym $mod+Escape mode $sysmode

@@ -144,7 +144,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Startup script
-exec_always i3init
+exec_always ~/.i3/bin/i3init
 
 # System font
 font pango: Retroville NC 16px

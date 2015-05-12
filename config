@@ -182,3 +182,5 @@ mode "mouse control" {
 }
 
 bindsym $mod+m mode "mouse control"
+
+bindsym $mod+c exec i3-input -F 'exec %s' -P 'Command: '

@@ -1,0 +1,32 @@
+#!/bin/bash
+
+function surf() {
+  name=$1
+
+  currentdir=`pwd`
+  surfer="$currentdir/.surfer"
+
+  while [ ! -f $surfer ]
+  do
+    cd ..
+    currentdir=`pwd`
+    surfer="$currentdir/.surfer"
+
+    if [ $currentdir == "/" ]; then 
+      echo "Can't find any .surfer file, exiting"
+      break 
+    fi
+  done
+
+  if [ -f $surfer ]; then
+    while read line           
+    do          
+      linename=`echo $line | cut -d'|' -f 1`
+      folder=`echo $line | cut -d'|' -f 2`
+      if [ $linename == $name ]; then
+        dest="$currentdir$folder"
+        cd $dest
+      fi
+    done < $surfer
+  fi
+}

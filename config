@@ -197,3 +197,6 @@ mode $sysmode {
 }
 
 bindsym $mod+Escape mode $sysmode
+
+#Printscreen
+bindsym $mod+p exec ~/.i3/bin/printscreen

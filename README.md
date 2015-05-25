@@ -5,3 +5,4 @@ my i3 window manager config
 - dmenu
 - feh
 - xdotool
+- scrot

@@ -5,4 +5,5 @@ set nu
 set statusline+=%F
 set laststatus=2
 set autoread
+set mouse=a
 syntax on

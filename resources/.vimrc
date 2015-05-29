@@ -6,4 +6,5 @@ set statusline+=%F
 set laststatus=2
 set autoread
 set mouse=a
+set autoindent
 syntax on

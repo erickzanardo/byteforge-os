@@ -7,4 +7,5 @@ set laststatus=2
 set autoread
 set mouse=a
 set autoindent
+set cursorline
 syntax on

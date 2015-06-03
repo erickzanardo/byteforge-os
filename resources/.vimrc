@@ -9,4 +9,8 @@ set mouse=a
 set autoindent
 set cursorline
 set pastetoggle=<F2>
+noremap <up> <nop>
+noremap <down> <nop>
+noremap <left> <nop>
+noremap <right> <nop>
 syntax on

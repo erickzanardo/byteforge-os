@@ -8,4 +8,5 @@ set autoread
 set mouse=a
 set autoindent
 set cursorline
+set pastetoggle=<F2>
 syntax on

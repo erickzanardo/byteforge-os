@@ -10,7 +10,7 @@
     cursor_color = "#0d5f09"
     foreground_color = "#00ff00"
     show_titlebar = False
-    font = Press Start 2P Medium 9
+    font = Press Start 2P Medium 7
 [layouts]
   [[default]]
     [[[child1]]]

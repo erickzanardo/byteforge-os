@@ -1,0 +1,3 @@
+#!/bin/bash
+alias ccat='pygmentize -g'
+alias ll='ls -al'

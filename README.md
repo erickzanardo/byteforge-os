@@ -6,3 +6,4 @@ my i3 window manager config
 - feh
 - xdotool
 - scrot
+- Pygments (apt-get install python-pygments)

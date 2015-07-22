@@ -1,2 +1,2 @@
 #!/bin/bash
-i3-input -F 'exec scrot -s %s' -P 'Filename: '
+i3-input -F 'exec scrot -s ~/prints/%s' -P 'Filename: '

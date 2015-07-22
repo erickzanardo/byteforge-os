@@ -1,4 +1,5 @@
 [global_config]
+  enabled_plugins = LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
 [keybindings]
 [profiles]
   [[default]]
@@ -10,7 +11,7 @@
     cursor_color = "#0d5f09"
     foreground_color = "#00ff00"
     show_titlebar = False
-    font = Press Start 2P Medium 7
+    font = Inconsolata Medium 14
 [layouts]
   [[default]]
     [[[child1]]]

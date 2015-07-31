@@ -16,3 +16,18 @@ noremap <right> <nop>
 syntax on
 execute pathogen#infect()
 syntax on
+
+let g:lightline = { 'colorscheme': 'wombat' }
+
+filetype plugin indent on
+
+autocmd FileType make setlocal noexpandtab tabstop=4 shiftwidth=4
+autocmd FileType java setlocal noexpandtab tabstop=4 shiftwidth=4
+autocmd FileType ruby setlocal noexpandtab tabstop=2 shiftwidth=2
+autocmd FileType javascript setlocal noexpandtab tabstop=2 shiftwidth=2
+
+let g:EclimCompletionMethod = 'omnifunc'
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l

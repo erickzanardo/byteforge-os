@@ -11,7 +11,7 @@
     cursor_color = "#0d5f09"
     foreground_color = "#00ff00"
     show_titlebar = False
-    font = Inconsolata Medium 14
+    font = Inconsolata for Powerline Plus Nerd File Types Medium 14
 [layouts]
   [[default]]
     [[[child1]]]

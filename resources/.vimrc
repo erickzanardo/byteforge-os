@@ -21,10 +21,10 @@ let g:lightline = { 'colorscheme': 'wombat' }
 
 filetype plugin indent on
 
-autocmd FileType make setlocal noexpandtab tabstop=4 shiftwidth=4
-autocmd FileType java setlocal noexpandtab tabstop=4 shiftwidth=4
-autocmd FileType ruby setlocal noexpandtab tabstop=2 shiftwidth=2
-autocmd FileType javascript setlocal noexpandtab tabstop=2 shiftwidth=2
+autocmd FileType make setlocal expandtab tabstop=4 shiftwidth=4
+autocmd FileType java setlocal expandtab tabstop=4 shiftwidth=4
+autocmd FileType ruby setlocal expandtab tabstop=2 shiftwidth=2
+autocmd FileType javascript setlocal expandtab tabstop=2 shiftwidth=2
 
 let g:EclimCompletionMethod = 'omnifunc'
 map <C-h> <C-w>h

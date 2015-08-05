@@ -48,6 +48,10 @@ bindsym $mod+Shift+k move down
 bindsym $mod+Shift+l move up
 bindsym $mod+Shift+ccedilla move right
 
+# Move the current workspace to the next output
+# # (effectively toggles when you only have two outputs)
+bindsym $mod+x move workspace to output right
+
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
@@ -194,3 +198,5 @@ bindsym $mod+Escape mode $sysmode
 
 #Printscreen
 bindsym $mod+p exec ~/.i3/bin/printscreen
+
+exec i3 --force-xinerama -V >>~/.i3/i3log 2>&1

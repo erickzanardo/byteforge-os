@@ -13,9 +13,6 @@ noremap <up> <nop>
 noremap <down> <nop>
 noremap <left> <nop>
 noremap <right> <nop>
-syntax on
-execute pathogen#infect()
-syntax on
 
 let g:lightline = { 'colorscheme': 'wombat' }
 

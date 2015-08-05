@@ -1,0 +1,8 @@
+04-08-2015 22:13:43 - ERROR: Using Xinerama instead of RandR. This option should be avoided at all cost because it does not refresh the list of screens, so you cannot configure displays at runtime. Please check if your driver really does not support RandR and disable this option as soon as you can.
+04-08-2015 22:13:43 - i3 4.7.2 (2014-01-23, branch "tags/4.7.2") starting
+04-08-2015 22:13:43 - Parsing configfile /home/erick/.i3/config
+deciding for version 4 due to this line: # i3 config file (v4)
+04-08-2015 22:13:43 - [libi3] libi3/font.c Using X font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+04-08-2015 22:13:43 - [libi3] libi3/font.c Using Pango font Retroville NC, size 16
+04-08-2015 22:13:43 - [libi3] libi3/font.c X11 root window dictates 96,252632 DPI
+ERROR: Another window manager seems to be running (X error 10)

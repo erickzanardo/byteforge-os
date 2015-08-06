@@ -7,3 +7,4 @@ my i3 window manager config
 - xdotool
 - scrot
 - Pygments (apt-get install python-pygments)
+- i3lock

@@ -195,7 +195,16 @@ mode $sysmode {
   bindsym Escape mode "default"
 }
 
-bindsym $mod+Escape mode $sysmode
+# Volume Control mode
+set $volumemode "Volume Control (U)p (D)own"
+mode $volumemode {
+  bindsym u exec --no-startup-id amixer set Master 10%+
+  bindsym d exec --no-startup-id amixer set Master 10%-
+
+  bindsym Escape mode "default"
+}
+
+bindsym $mod+v mode $volumemode
 
 #Printscreen
 bindsym $mod+p exec ~/.i3/bin/printscreen

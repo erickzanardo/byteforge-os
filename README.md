@@ -10,3 +10,4 @@ my i3 window manager config
 - i3lock
 - xrandr
 - imagemagick
+- amixer

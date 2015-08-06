@@ -44,6 +44,11 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
+map <S-h> :vertical resize -5<CR>
+map <S-j> :resize -5<CR>
+map <S-k> :resize +5<CR>
+map <S-l> :vertical resize +5<CR>
+
 " Reset the listchars
 set listchars=""
 " a tab should display as " ", trailing whitespace as "."

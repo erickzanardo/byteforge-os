@@ -8,3 +8,5 @@ my i3 window manager config
 - scrot
 - Pygments (apt-get install python-pygments)
 - i3lock
+- xrandr
+- imagemagick

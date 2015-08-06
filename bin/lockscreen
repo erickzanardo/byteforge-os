@@ -1,0 +1,6 @@
+#!/bin/bash
+screen_size=`xrandr | grep \* | cut -c 4-11`
+
+convert -resize $screen_size ~/.i3/images/lockscreenimage.png /tmp/locksreenimage.png
+
+i3lock -i /tmp/locksreenimage.png -c 000000

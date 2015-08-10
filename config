@@ -181,6 +181,62 @@ mode "mouse control" {
 
 bindsym $mod+m mode "mouse control"
 
+# Vim mode
+mode "VIM" {
+  # Do nothing
+  bindsym q exec :
+  bindsym w exec :
+  bindsym r exec :
+  bindsym t exec :
+  bindsym y exec :
+  bindsym u exec :
+  bindsym o exec :
+  bindsym p exec :
+  bindsym a exec :
+  bindsym s exec :
+  bindsym d exec :
+  bindsym f exec :
+  bindsym g exec :
+  bindsym ç exec :
+  bindsym z exec :
+  bindsym c exec :
+  bindsym v exec :
+  bindsym b exec :
+  bindsym n exec :
+  bindsym m exec :
+  bindsym 1 exec :
+  bindsym 2 exec :
+  bindsym 3 exec :
+  bindsym 4 exec :
+  bindsym 5 exec :
+  bindsym 6 exec :
+  bindsym 7 exec :
+  bindsym 8 exec :
+  bindsym 9 exec :
+  bindsym 0 exec :
+
+  # Navigation
+  bindsym --release k exec xdotool key --window `xdotool getactivewindow` Up 
+  bindsym --release j exec xdotool key --window `xdotool getactivewindow` Down
+  bindsym --release h exec xdotool key --window `xdotool getactivewindow` Left
+  bindsym --release l exec xdotool key --window `xdotool getactivewindow` Right
+  bindsym --release e exec xdotool key --window `xdotool getactivewindow` Control+Right
+  bindsym --release b exec xdotool key --window `xdotool getactivewindow` Control+Left
+  # Delete
+  bindsym --release x exec xdotool key --window `xdotool getactivewindow` Delete 
+
+  # Modes
+  bindsym i mode "VIM (insert)"
+  bindsym --release Shift+a exec xdotool key --window `xdotool getactivewindow` End, mode "VIM (insert)"
+  bindsym Escape mode "default" 
+}
+
+bindsym $mod+v mode "VIM"
+
+mode "VIM (insert)" {
+  bindsym Escape mode "VIM" 
+}
+
 # Exec command dialog (like Win+R on windows)
 bindsym $mod+c exec i3-input -F 'exec %s' -P 'Command: '
 

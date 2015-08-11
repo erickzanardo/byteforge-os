@@ -1,7 +1,15 @@
 #!/bin/bash
 while :
 do
-  now=$(date +"%H:%M")
-  echo "Now: $now"
+  statusLine=""
+  playing=`~/.i3/bin/playmusic/playingnow`
+  playingLabel=""
+  if [ -n "$playing" ]
+  then
+    playingLabel="Listening to: $playing - "
+  fi
+
+  now="Now: $(date +"%H:%M")"
+  echo "$playingLabel$now"
   sleep 30
 done

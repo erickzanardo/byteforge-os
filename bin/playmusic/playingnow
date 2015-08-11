@@ -1,0 +1,2 @@
+#!/bin/bash
+xdotool search --name "Google Play" getwindowname | sed "s/ - Google Play Music - Mozilla Firefox//"

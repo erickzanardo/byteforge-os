@@ -252,6 +252,12 @@ mode $sysmode {
 }
 bindsym $mod+Escape mode $sysmode
 
+# Media player controls
+bindsym XF86AudioPlay exec ~/.i3/bin/playmusic/pause
+bindsym XF86AudioPause exec ~/.i3/bin/playmusic/pause
+bindsym XF86AudioNext exec ~/.i3/bin/playmusic/next
+bindsym XF86AudioPrev exec ~/.i3/bin/playmusic/previous
+
 # Volume control
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer set Master 10%+
 bindsym XF86AudioLowerVolume exec --no-startup-id amixer set Master 10%-

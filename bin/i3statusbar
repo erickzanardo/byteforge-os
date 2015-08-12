@@ -3,7 +3,7 @@ while :
 do
   # Battery status
   adapter=`acpi -V | grep "Adapter 0:" | cut -c 12-`
-  battery=`acpi -V | grep -m 1 "Battery 0:" | sed -r "s/.*([0-9][0-9]%).*/\1/"`
+  battery=`acpi -V | grep -m 1 "Battery 0:" | sed -r "s/.*, ([0-9]?[0-9][0-9]%)/\1/"`
   if [ "$adapter" = "on-line" ]
   then
     battery="\uf1bc $battery"

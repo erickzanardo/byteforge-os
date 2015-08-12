@@ -11,6 +11,10 @@ do
     battery="\uf0cd $battery"
   fi
 
+  # Volume
+  volume=`amixer get 'Master' | grep Playback | grep % | sed -r "s/.*Playback [0-9]?[0-9]?[0-9] \[(.*%)\].*/\1/"`
+  volume="\uf001 $volume"
+
   # Listening status
   statusLine=""
   playing=`~/.i3/bin/playmusic/playingnow`
@@ -22,6 +26,6 @@ do
 
   # Clock status
   now="\uf016 $(date +"%H:%M")"
-  echo -e "[$playingLabel][$battery][$now]"
+  echo -e "[$volume][$playingLabel][$battery][$now]"
   sleep 30
 done

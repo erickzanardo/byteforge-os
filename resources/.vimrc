@@ -7,9 +7,14 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Bundle 'scrooloose/nerdtree'
+Plugin 'ryanoasis/vim-devicons'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
+
+" Fonts
+set encoding=utf8
+set guifont=Inconsolata\ for\ Powerline\ Plus\ Nerd\ File\ Types\ Plus\ Font\ Awesome\ 12
 
 set expandtab
 set tabstop=2

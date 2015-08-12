@@ -145,11 +145,11 @@ bindsym $mod+r mode "resize"
 exec_always ~/.i3/bin/i3init
 
 # System font
-font pango: Retroville NC 16px
+font pango: Droid Sans Mono for Powerline Plus Nerd File Types Plus Font Awesome 16px bold
 
 # Bar
 bar {
-  font pango: Retroville NC 16px
+  font pango: Droid Sans Mono for Powerline Plus Nerd File Types Plus Font Awesome 16px
   status_command ~/.i3/bin/i3statusbar
   colors {
     focused_workspace #164D1D #00CF1C #164D1D

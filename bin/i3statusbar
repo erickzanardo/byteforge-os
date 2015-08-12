@@ -1,15 +1,27 @@
 #!/bin/bash
 while :
 do
+  # Battery status
+  adapter=`acpi -V | grep "Adapter 0:" | cut -c 12-`
+  battery=`acpi -V | grep -m 1 "Battery 0:" | sed -r "s/.*([0-9][0-9]%).*/\1/"`
+  if [ "$adapter" = "on-line" ]
+  then
+    battery="\uf1bc $battery"
+  else
+    battery="\uf0cd $battery"
+  fi
+
+  # Listening status
   statusLine=""
   playing=`~/.i3/bin/playmusic/playingnow`
   playingLabel=""
   if [ -n "$playing" ]
   then
-    playingLabel="Listening to: $playing - "
+    playingLabel="\uf022 $playing"
   fi
 
-  now="Now: $(date +"%H:%M")"
-  echo "$playingLabel$now"
+  # Clock status
+  now="\uf016 $(date +"%H:%M")"
+  echo -e "[$playingLabel][$battery][$now]"
   sleep 30
 done

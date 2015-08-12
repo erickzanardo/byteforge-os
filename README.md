@@ -11,3 +11,4 @@ my i3 window manager config
 - xrandr
 - imagemagick
 - amixer
+- acpi

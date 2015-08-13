@@ -50,10 +50,16 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
+" Resize control
 map <S-h> :vertical resize -5<CR>
 map <S-j> :resize -5<CR>
 map <S-k> :resize +5<CR>
 map <S-l> :vertical resize +5<CR>
+
+" Autoopen nerdtree
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
 
 " Reset the listchars
 set listchars=""

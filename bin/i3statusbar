@@ -18,10 +18,12 @@ do
   # Listening status
   statusLine=""
   playing=`~/.i3/bin/playmusic/playingnow`
-  playingLabel=""
+  playingLabel="\uf022"
   if [ -n "$playing" ]
   then
-    playingLabel="\uf022 $playing"
+    playingLabel="$playingLabel $playing"
+  else
+    playingLabel="$playingLabel Off"
   fi
 
   # Clock status

@@ -8,13 +8,17 @@ call vundle#begin()
 
 Bundle 'scrooloose/nerdtree'
 Plugin 'ryanoasis/vim-devicons'
+Bundle 'chriskempson/base16-vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-" Fonts
+" Fonts and colors
+set background=dark
+colorscheme base16-ashes
 set encoding=utf8
 set guifont=Inconsolata\ for\ Powerline\ Plus\ Nerd\ File\ Types\ Plus\ Font\ Awesome\ 12
+hi StatusLine ctermbg=white ctermfg=black
 
 set expandtab
 set tabstop=2

@@ -268,4 +268,19 @@ bindsym XF86TouchpadToggle exec --no-startup-id ~/.i3/bin/touchpadtoggle
 #Printscreen
 bindsym $mod+p exec ~/.i3/bin/printscreen
 
+# Gif Recordering mode
+set $recordingmode "Recording, press ESC to stop"
+mode $recordingmode {
+  bindsym Escape exec ~/.i3/bin/gifrecorder stop, mode "default"
+}
+
+# Gif Recorder mode
+set $recordmode "Record mode, press r to start"
+mode $recordmode {
+  bindsym r exec ~/.i3/bin/gifrecorder record &, mode $recordingmode
+
+  bindsym Escape mode "default"
+}
+bindsym $mod+g mode $recordmode
+
 exec i3 --force-xinerama -V >>~/.i3/i3log 2>&1

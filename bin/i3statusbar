@@ -27,7 +27,7 @@ do
   fi
 
   # Clock status
-  now="\uf016 $(date +"%H:%M")"
+  now="\uf016 $(date +"%H:%M \uf06c %d/%m/%Y")"
   echo -e "[$volume][$playingLabel][$battery][$now]"
   sleep 30
 done

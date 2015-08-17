@@ -271,13 +271,13 @@ bindsym $mod+p exec ~/.i3/bin/printscreen
 # Gif Recordering mode
 set $recordingmode "Recording, press ESC to stop"
 mode $recordingmode {
-  bindsym Escape exec ~/.i3/bin/gifrecorder stop, mode "default"
+  bindsym Escape exec ~/gifrecorder/gifrecorder stop, mode "default"
 }
 
 # Gif Recorder mode
 set $recordmode "Record mode, press r to start"
 mode $recordmode {
-  bindsym r exec ~/.i3/bin/gifrecorder record &, mode $recordingmode
+  bindsym r exec ~/gifrecorder/gifrecorder record &, mode $recordingmode
 
   bindsym Escape mode "default"
 }

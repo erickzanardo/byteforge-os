@@ -12,3 +12,4 @@ my i3 window manager config
 - imagemagick
 - amixer
 - acpi
+- gifrecorder (https://github.com/erickzanardo/gifrecorder)

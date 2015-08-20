@@ -263,7 +263,7 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id amixer set Master 10%+
 bindsym XF86AudioLowerVolume exec --no-startup-id amixer set Master 10%-
 
 # Touchpad control
-bindsym XF86TouchpadToggle exec --no-startup-id ~/.i3/bin/touchpadtoggle
+bindsym XF86TouchpadToggle exec --no-startup-id ~/.i3/bin/touchpadtoggle toggle
 
 #Printscreen
 bindsym $mod+p exec ~/.i3/bin/printscreen

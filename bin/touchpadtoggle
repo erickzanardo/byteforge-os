@@ -1,12 +1,26 @@
 #!/bin/bash
-
-state=`synclient | grep TouchpadOff | cut -c 31-`
-
-if [ "$state" = "1" ]
-then
-  synclient TouchpadOff=0
-  notify-send -u critical "TouchpadControl" "Touchpad is on now"
-else
-  synclient TouchpadOff=1
-  notify-send -u critical "TouchpadControl" "Touchpad is off now"
-fi
+case "$1" in
+  toggle)
+    state=`synclient | grep TouchpadOff | cut -c 31-`
+    
+    if [ "$state" = "1" ]
+    then
+      synclient TouchpadOff=0
+      notify-send -u critical "TouchpadControl" "Touchpad is on now"
+      echo "on" > $HOME/.touchpad
+    else
+      synclient TouchpadOff=1
+      notify-send -u critical "TouchpadControl" "Touchpad is off now"
+      echo "off" > $HOME/.touchpad
+    fi
+  ;;
+  init)
+    state=`cat $HOME/.touchpad`
+    if [ "$state" = "on" ]
+    then
+      synclient TouchpadOff=0
+    else
+      synclient TouchpadOff=1
+    fi
+  ;;
+esac

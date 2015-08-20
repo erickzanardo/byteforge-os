@@ -9,6 +9,7 @@ call vundle#begin()
 Bundle 'scrooloose/nerdtree'
 Plugin 'ryanoasis/vim-devicons'
 Bundle 'chriskempson/base16-vim'
+Bundle 'kien/ctrlp.vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -43,6 +44,7 @@ filetype plugin indent on
 autocmd FileType make setlocal expandtab tabstop=4 shiftwidth=4
 autocmd FileType sh setlocal expandtab tabstop=2 shiftwidth=2
 autocmd FileType html setlocal expandtab tabstop=4 shiftwidth=4
+autocmd FileType erb setlocal expandtab tabstop=4 shiftwidth=4
 autocmd FileType java setlocal expandtab tabstop=4 shiftwidth=4
 autocmd FileType ruby setlocal expandtab tabstop=2 shiftwidth=2
 autocmd FileType css setlocal expandtab tabstop=2 shiftwidth=2

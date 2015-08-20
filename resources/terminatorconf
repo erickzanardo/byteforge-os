@@ -12,6 +12,7 @@
     foreground_color = "#00ff00"
     show_titlebar = False
     font = Inconsolata for Powerline Plus Nerd File Types Plus Font Awesome Medium 13
+    scrollback_infinite = True
 [layouts]
   [[default]]
     [[[child1]]]

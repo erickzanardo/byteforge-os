@@ -26,8 +26,11 @@ do
     playingLabel="$playingLabel Off"
   fi
 
+  # Memory usage
+  memory=`~/.i3/bin/memusage`
+
   # Clock status
   now="\uf016 $(date +"%H:%M \uf06c %d/%m/%Y")"
-  echo -e "[$volume][$playingLabel][$battery][$now]"
+  echo -e "[$volume][$playingLabel][$memory][$battery][$now]"
   sleep 30
 done

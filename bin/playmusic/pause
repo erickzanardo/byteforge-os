@@ -1,2 +1,2 @@
 #!/bin/bash
-xdotool search --name "Google Play" key space 
+curl -X GET http://localhost:3333/togglePlay

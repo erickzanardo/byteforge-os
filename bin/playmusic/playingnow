@@ -1,2 +1,2 @@
 #!/bin/bash
-xdotool search --name "Google Play" getwindowname | sed "s/ - Google Play Music - Mozilla Firefox//"
+xdotool search --name "Play Music Client" getwindowname | sed "s/Play Music Client - //"

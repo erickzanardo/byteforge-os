@@ -17,11 +17,11 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 
 " Fonts and colors
-set background=dark
-colorscheme base16-ashes
+" set background=dark
+" colorscheme base16-ashes
+" hi StatusLine ctermbg=white ctermfg=black
 set encoding=utf8
 set guifont=Inconsolata\ for\ Powerline\ Plus\ Nerd\ File\ Types\ Plus\ Font\ Awesome\ 12
-hi StatusLine ctermbg=white ctermfg=black
 
 set expandtab
 set tabstop=2
@@ -82,3 +82,9 @@ set listchars+=extends:>
 " The character to show in the last column when wrap is off and the line
 " continues beyond the right of the screen
 set listchars+=precedes:<
+
+" ctrlp ignores
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'file': '\v\.(exe|so|dll|class|war)$'
+  \ }

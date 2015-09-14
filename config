@@ -51,6 +51,7 @@ bindsym $mod+Shift+ccedilla move right
 # Move the current workspace to the next output
 # # (effectively toggles when you only have two outputs)
 bindsym $mod+x move workspace to output right
+bindsym $mod+Shift+x move workspace to output down
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left

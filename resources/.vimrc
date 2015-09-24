@@ -15,6 +15,7 @@ Bundle 'tpope/vim-rails'
 Plugin 'ekalinin/Dockerfile.vim'
 Bundle 'amadeus/vim-escaper'
 Bundle 'erickzanardo/vim-xclip'
+Bundle 'leafgarland/typescript-vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required

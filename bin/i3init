@@ -1,4 +1,14 @@
-feh --bg-scale ~/.i3/images/wallpaper
+#!/bin/bash
+
+CURRENT_NETWORK=`iwlist wlan0 scan | gawk 'match($0, /ESSID:\"([^\"]+)\"?/, a) {print a[1]}'`
+
+echo $CURRENT_NETWORK
+
+if [ -d "/home/erick/bin/homeinit" ] ; then
+  /home/erick/bin/homeinit
+fi
+
+~/.i3/bin/i3wallpaper
 setxkbmap -layout "br" -model "intl," -option "grp:shift_toggle"
 
 ~/.i3/bin/touchpadtoggle init

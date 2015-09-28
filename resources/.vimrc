@@ -58,21 +58,22 @@ autocmd FileType javascript setlocal expandtab tabstop=2 shiftwidth=2
 autocmd FileType yml setlocal expandtab tabstop=2 shiftwidth=2
 
 let g:EclimCompletionMethod = 'omnifunc'
-map <C-h> <C-w>h
-map <C-j> <C-w>j
-map <C-k> <C-w>k
-map <C-l> <C-w>l
+
+" Window moving
+nmap <C-h> <C-w>h
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+nmap <C-l> <C-w>l
 
 " Resize control
-map <S-h> :vertical resize -5<CR>
-map <S-j> :resize -5<CR>
-map <S-k> :resize +5<CR>
-map <S-l> :vertical resize +5<CR>
+nmap <left> :vertical resize -5<CR>
+nmap <up> :resize -5<CR>
+nmap <down> :resize +5<CR>
+nmap <right> :vertical resize +5<CR>
 
 " Autoopen nerdtree
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-
 
 " Reset the listchars
 set listchars=""

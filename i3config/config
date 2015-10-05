@@ -143,7 +143,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Startup script
-exec_always ~/.i3/bin/i3init
+exec_always ~/.bfos/bin/bfinit
 
 # System font
 font pango: Droid Sans Mono for Powerline Plus Nerd File Types Plus Font Awesome 16px bold
@@ -151,7 +151,7 @@ font pango: Droid Sans Mono for Powerline Plus Nerd File Types Plus Font Awesome
 # Bar
 bar {
   font pango: Droid Sans Mono for Powerline Plus Nerd File Types Plus Font Awesome 16px
-  status_command ~/.i3/bin/i3statusbar
+  status_command ~/.bfos/bin/bfstatusbar
   colors {
     focused_workspace #164D1D #00CF1C #164D1D
   }
@@ -244,30 +244,30 @@ bindsym $mod+c exec i3-input -F 'exec %s' -P 'Command: '
 # System functions
 set $sysmode "(S)hutdown L(o)gout (R)eboot (L)ock"
 mode $sysmode {
-  bindsym s exec --no-startup-id ~/.i3/bin/i3shutdown, mode "default"
-  bindsym o exec --no-startup-id ~/.i3/bin/i3logout logout, mode "default"
-  bindsym r exec --no-startup-id ~/.i3/bin/i3reboot, mode "default"
-  bindsym l exec --no-startup-id ~/.i3/bin/lockscreen, mode "default"
+  bindsym s exec --no-startup-id ~/.bfos/bin/bfshutdown, mode "default"
+  bindsym o exec --no-startup-id ~/.bfos/bin/bflogout logout, mode "default"
+  bindsym r exec --no-startup-id ~/.bfos/bin/bfreboot, mode "default"
+  bindsym l exec --no-startup-id ~/.bfos/bin/bflockscreen, mode "default"
 
   bindsym Escape mode "default"
 }
 bindsym $mod+Escape mode $sysmode
 
 # Media player controls
-bindsym XF86AudioPlay exec ~/.i3/bin/playmusic/pause
-bindsym XF86AudioPause exec ~/.i3/bin/playmusic/pause
-bindsym XF86AudioNext exec ~/.i3/bin/playmusic/next
-bindsym XF86AudioPrev exec ~/.i3/bin/playmusic/previous
+bindsym XF86AudioPlay exec ~/.bfos/bin/playmusic/pause
+bindsym XF86AudioPause exec ~/.bfos/bin/playmusic/pause
+bindsym XF86AudioNext exec ~/.bfos/bin/playmusic/next
+bindsym XF86AudioPrev exec ~/.bfos/bin/playmusic/previous
 
 # Volume control
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer set Master 10%+
 bindsym XF86AudioLowerVolume exec --no-startup-id amixer set Master 10%-
 
 # Touchpad control
-bindsym XF86TouchpadToggle exec --no-startup-id ~/.i3/bin/touchpadtoggle toggle
+bindsym XF86TouchpadToggle exec --no-startup-id ~/.bfos/bin/bftouchpadtoggle toggle
 
 #Printscreen
-bindsym $mod+p exec ~/.i3/bin/printscreen
+bindsym $mod+p exec ~/.bfos/bin/bfprintscreen
 
 # Gif Recordering mode
 set $recordingmode "Recording, press ESC to stop"

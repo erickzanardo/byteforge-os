@@ -17,7 +17,7 @@ do
 
   # Listening status
   statusLine=""
-  playing=`~/.i3/bin/playmusic/playingnow`
+  playing=`~/.bfos/bin/playmusic/playingnow`
   playingLabel="\uf022"
   if [ -n "$playing" ]
   then
@@ -27,7 +27,7 @@ do
   fi
 
   # Memory usage
-  memory=`~/.i3/bin/memusage`
+  memory=`~/.bfos/bin/bfmemusage`
 
   # Clock status
   now="\uf016 $(date +"%H:%M \uf06c %d/%m/%Y")"

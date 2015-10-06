@@ -1,2 +1,2 @@
 #/bin/bash
-feh --bg-scale ~/.i3/images/wallpaper
+feh --bg-scale ~/.bfos/images/wallpaper

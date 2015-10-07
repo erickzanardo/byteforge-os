@@ -1,14 +1,10 @@
 #!/bin/bash
 
-CURRENT_NETWORK=`iwlist wlan0 scan | gawk 'match($0, /ESSID:\"([^\"]+)\"?/, a) {print a[1]}'`
-
-echo $CURRENT_NETWORK
-
-if [ -d "/home/erick/bin/homeinit" ] ; then
-  /home/erick/bin/homeinit
+if [ -f ~/bin/homeinit ] ; then
+  ~/bin/homeinit
 fi
 
-~/.i3/bin/i3wallpaper
+~/.bfos/bin/bfwallpaper
 setxkbmap -layout "br" -model "intl," -option "grp:shift_toggle"
 
-~/.i3/bin/touchpadtoggle init
+~/.bfos/bin/bftouchpadtoggle init

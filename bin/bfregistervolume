@@ -1,0 +1,3 @@
+#!/bin/bash
+volume=`amixer get 'Master' | grep Playback | grep % | sed -r "s/.*Playback [0-9]?[0-9]?[0-9] \[(.*%)\].*/\1/"`
+echo "$volume" > ~/.bfvolume

@@ -13,3 +13,5 @@ my i3 window manager config
 - amixer
 - acpi
 - gifrecorder (https://github.com/erickzanardo/gifrecorder)
+- pcmanfm
+- Node v4.1.0

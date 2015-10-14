@@ -6,7 +6,7 @@ module.exports = function(update) {
         "\uf06c",
         new Date().toLocaleDateString("pt-BR")
     ].join(" "));
+    setTimeout(updateTime, 60000);
   }
-  setTimeout(updateTime, 60000);
   updateTime();
 };

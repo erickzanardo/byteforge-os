@@ -1,2 +1,0 @@
-#!/bin/bash
-xdotool search --name "Play Music Client" getwindowname | sed "s/Play Music Client//" | sed "s/ - //"

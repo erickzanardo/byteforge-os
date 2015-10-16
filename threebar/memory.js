@@ -13,7 +13,7 @@ module.exports = function(update) {
         data.toString()
       ].join(" "));
     });
+    setTimeout(updateMemory, 60000);
   };
-  setTimeout(updateMemory, 60000);
   updateMemory();
 };

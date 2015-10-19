@@ -7,15 +7,15 @@ case "$1" in
     then
       synclient TouchpadOff=0
       notify-send -u critical "TouchpadControl" "Touchpad is on now"
-      echo "on" > $HOME/.touchpad
+      echo "on" > $HOME/.bftouchpad
     else
       synclient TouchpadOff=1
       notify-send -u critical "TouchpadControl" "Touchpad is off now"
-      echo "off" > $HOME/.touchpad
+      echo "off" > $HOME/.bftouchpad
     fi
   ;;
   init)
-    state=`cat $HOME/.touchpad`
+    state=`cat $HOME/.bftouchpad`
     if [ "$state" = "on" ]
     then
       synclient TouchpadOff=0

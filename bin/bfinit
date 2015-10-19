@@ -4,6 +4,11 @@ if [ -f ~/bin/homeinit ] ; then
   ~/bin/homeinit
 fi
 
+if [ -f ~/.bfvolume ] ; then
+  VOLUME=`cat ~/.bfvolume`
+  amixer set Master $VOLUME
+fi
+
 ~/.bfos/bin/bfwallpaper
 setxkbmap -layout "br" -model "intl," -option "grp:shift_toggle"
 

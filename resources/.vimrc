@@ -15,7 +15,6 @@ Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-fugitive'
 Plugin 'ekalinin/Dockerfile.vim'
 Bundle 'amadeus/vim-escaper'
-Bundle 'erickzanardo/vim-xclip'
 Bundle 'leafgarland/typescript-vim'
 
 
@@ -72,6 +71,10 @@ nmap <left> :vertical resize -5<CR>
 nmap <up> :resize -5<CR>
 nmap <down> :resize +5<CR>
 nmap <right> :vertical resize +5<CR>
+
+" Copy/Paste
+vmap <C-c> "+y
+nmap <C-b> "+p
 
 " Autoopen nerdtree
 autocmd StdinReadPre * let s:std_in=1

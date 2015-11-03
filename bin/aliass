@@ -2,3 +2,4 @@
 alias ccat='pygmentize -g'
 alias ll='ls -al'
 alias pss='ps aux | grep $1'
+alias copy='xclip -sel clipboard'

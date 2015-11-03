@@ -1,2 +1,7 @@
-#/bin/bash
-feh --bg-scale ~/.bfos/images/wallpaper
+#!/bin/bash
+
+if [ -f ~/bfwallpaper ] ; then
+  feh --bg-scale ~/bfwallpaper
+else
+  feh --bg-scale ~/.bfos/images/wallpaper
+fi

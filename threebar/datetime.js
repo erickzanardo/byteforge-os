@@ -1,10 +1,15 @@
 module.exports = function(update) {
   var updateTime = () => {
+    var d = new Date();
     update("datetime", [
         "\uf016",
-        new Date().toLocaleTimeString("pt-BR"),
+        d.toLocaleTimeString("pt-BR"),
         "\uf06c",
-        new Date().toLocaleDateString("pt-BR")
+        [
+          d.getDate(),
+          d.getMonth() + 1,
+          d.getFullYear()
+        ].join("/")
     ].join(" "));
     setTimeout(updateTime, 60000);
   }

@@ -9,7 +9,15 @@ if [ -f ~/.bfvolume ] ; then
   amixer set Master $VOLUME
 fi
 
+# Set the wallpaper
 ~/.bfos/bin/bfwallpaper
 setxkbmap -layout "br" -model "intl," -option "grp:shift_toggle"
 
+# Initi the mousepad configutarion
 ~/.bfos/bin/bftouchpadtoggle init
+
+# Start the wifi applet
+if [ -z `pgrep nm-applet` ]
+then
+  nm-applet &
+fi

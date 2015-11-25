@@ -80,6 +80,10 @@ nmap <C-b> "+p
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
+" erb files bugs
+au BufNewFile,BufRead *.html.erb set filetype=html
+au BufNewFile,BufRead *.js.erb set filetype=javascript
+
 " Reset the listchars
 set listchars=""
 " a tab should display as " ", trailing whitespace as "."

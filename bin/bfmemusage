@@ -3,4 +3,4 @@
 total=`free -m | grep "Mem:" | cut -c 15-18`
 used=`free -m | grep "Mem:" | cut -c 26-29`
 
-echo -en "$total|$used"
+echo -en "$total/$used"

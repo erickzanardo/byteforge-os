@@ -1,0 +1,62 @@
+#!/bin/bash
+
+function ps1_curr_dir() {
+  pwd | sed "s|^$HOME|~|"
+}
+
+function ps1_project_type() {
+  local STATUS=""
+
+  if [ -e "Gemfile" ]
+  then
+    STATUS="[\ue739 ]"
+  fi
+
+  if [ -e "package.json" ]
+  then
+    STATUS="$STATUS[ \ue71e ]"
+  fi
+
+  if [ -e "bower.json" ]
+  then
+    STATUS="$STATUS[\ue74d ]"
+  fi
+
+  if [ -e "gulpfile.js" ]
+  then
+    STATUS="$STATUS[\ue763 ]"
+  fi
+
+  if [ -e "Dockerfile" ]
+  then
+    STATUS="$STATUS[\ue7b0 ]"
+  fi
+
+  if [ -e "pom.xml" ]
+  then
+    STATUS="$STATUS[ \ue738 ]"
+  fi
+
+  echo -e $STATUS
+}
+
+function ps1_git() {
+  local STATUS=""
+
+  local branch=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
+  if [ "$branch" != "" ]
+  then
+    STATUS="\ue702 $branch"
+
+    DIFF=`git status --porcelain`
+    if [ "$DIFF" != "" ]
+    then
+      STATUS="$STATUS*"
+    fi
+    STATUS=" [$STATUS] "
+  fi 
+
+  echo -e $STATUS
+}
+
+export PS1=$'\u@\h \[\e[0;34m\][`ps1_curr_dir`]\[\e[0;33m\]`ps1_git`\[\e[0;32m\]`ps1_project_type`\[\e[1;32m\] \uf102\[\e[0;m\]  '

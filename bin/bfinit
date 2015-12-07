@@ -4,13 +4,12 @@ if [ -f ~/bin/homeinit ] ; then
   ~/bin/homeinit
 fi
 
-if [ -f ~/.bfvolume ] ; then
-  VOLUME=`cat ~/.bfvolume`
-  amixer set Master $VOLUME
-fi
+~/.bfos/bin/bfregistervolume
 
 # Set the wallpaper
 ~/.bfos/bin/bfwallpaper
+
+# Configure the keyboard
 setxkbmap -layout "br" -model "intl," -option "grp:shift_toggle"
 
 # Initi the mousepad configutarion

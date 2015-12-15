@@ -1,6 +1,6 @@
 #!/bin/bash
 
-total=`free -m | grep "Mem:" | cut -c 15-18`
-used=`free -m | grep "Mem:" | cut -c 26-29`
+total=`free -m | awk 'NR==2{print $2}'`
+used=`free -m | awk 'NR==2{print $3}'`
 
 echo -en "$total/$used"

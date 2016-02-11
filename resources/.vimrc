@@ -16,7 +16,7 @@ Bundle 'tpope/vim-fugitive'
 Plugin 'ekalinin/Dockerfile.vim'
 Bundle 'amadeus/vim-escaper'
 Bundle 'leafgarland/typescript-vim'
-
+Plugin 'editorconfig/editorconfig-vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -59,6 +59,7 @@ autocmd FileType ruby setlocal expandtab tabstop=2 shiftwidth=2
 autocmd FileType css setlocal expandtab tabstop=2 shiftwidth=2
 autocmd FileType javascript setlocal expandtab tabstop=2 shiftwidth=2
 autocmd FileType yml setlocal expandtab tabstop=2 shiftwidth=2
+autocmd FileType lua setlocal expandtab tabstop=2 shiftwidth=2
 
 let g:EclimCompletionMethod = 'omnifunc'
 
@@ -85,6 +86,9 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 " erb files bugs
 au BufNewFile,BufRead *.html.erb set filetype=html
 au BufNewFile,BufRead *.js.erb set filetype=javascript
+
+" lua views files
+au BufNewFile,BufRead *.etlua set filetype=html
 
 " Reset the listchars
 set listchars=""

@@ -1,6 +1,16 @@
 #!/bin/bash
-alias ccat='pygmentize -g'
+alias dog='pygmentize -g'
 alias ll='ls -al'
 alias pss='ps aux | grep $1'
 alias copy='xclip -sel clipboard'
 alias explore='pcmanfm'
+
+# Dev grep
+alias drep='grep -r --exclude-dir=node_modules \
+                    --exclude-dir=bower_components  \
+                    --exclude-dir=log  \
+                    --exclude-dir=tmp  \
+                    --exclude-dir=vendor  \
+                    $1'
+
+alias vim='~/.bfos/bin/vim-chooser'

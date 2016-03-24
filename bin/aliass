@@ -1,10 +1,12 @@
 #!/bin/bash
 alias dog='pygmentize -g'
+alias dogjson='python -m json.tool | dog -l json'
 alias ll='ls -al'
 alias pss='ps aux | grep $1'
 alias copy='xclip -sel clipboard'
 alias explore='pcmanfm'
 
+alias lgrep='ll | grep $1'
 # Dev grep
 alias drep='grep -r --exclude-dir=node_modules \
                     --exclude-dir=bower_components  \

@@ -1,0 +1,47 @@
+#!/bin/bash
+
+FOLDER=$1
+REMOTE=$2
+
+if [ "$2" = "" ]
+then
+  REMOTE="origin"
+fi
+
+REMOTEURL="remote.$REMOTE.url"
+REMOTEURL=`git config --get $REMOTEURL`
+
+mkdir /tmp/ghpp
+
+echo "#######################"
+echo "# Clonning repository #"
+echo "#######################"
+echo ""
+
+git clone -b gh-pages --single-branch $REMOTEURL /tmp/ghpp 
+
+echo "######################"
+echo "# Cleaning old files #"
+echo "######################"
+echo ""
+
+rm -rf /tmp/ghpp/*
+
+echo "#####################"
+echo "# Copying new files #"
+echo "#####################"
+echo ""
+
+cp -r $FOLDER/* /tmp/ghpp/
+cd /tmp/ghpp
+
+git add . -A
+git commit -am"Updating static files"
+git push $REMOTE gh-pages
+
+rm -rf /tmp/ghpp
+
+echo "########"
+echo "# DONE #"
+echo "########"
+echo ""

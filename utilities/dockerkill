@@ -1,0 +1,16 @@
+#!/bin/bash
+
+if [ "$1" = "" ]
+then
+  echo "You must pass the image tag"
+else
+  ID=`docker ps | grep "$1" | cut -c 1-12`
+  if [ "$ID" = "" ]
+  then
+    echo "No docker process running for this image"
+  else
+    docker kill $ID
+    echo "$ID has been terminated"
+  fi
+fi
+

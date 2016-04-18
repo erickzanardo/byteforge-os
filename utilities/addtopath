@@ -1,0 +1,9 @@
+#!/bin/bash
+
+current_path=`pwd`
+
+cat << ADD_TO_PATH >> ~/.bashrc
+if [ -d "$current_path" ] ; then
+    PATH="$current_path:\$PATH"
+fi
+ADD_TO_PATH

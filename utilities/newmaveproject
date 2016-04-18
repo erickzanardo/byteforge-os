@@ -1,0 +1,15 @@
+#!/bin/bash
+
+echo "Group Id: "
+read group_id 
+echo "Artifact Id"
+read artifact_id
+echo "Archetype id: (default: maven-archetype-quickstart)"
+read archetype_id
+
+if [ ! -n "$archetype_id" ]; then
+    archetype_id="maven-archetype-quickstart"
+fi
+
+echo "Creating project $group_id - $artifact_id with $archetype_id"
+mvn archetype:generate -DgroupId=$group_id -DartifactId=$artifact_id -DarchetypeArtifactId=$archetype_id -DinteractiveMode=false

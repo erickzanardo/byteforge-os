@@ -1,0 +1,6 @@
+#!/bin/bash
+
+echo "Local repository path:"
+read path
+
+mvn -DaltDeploymentRepository=snapshot-repo::default::file:$path clean deploy

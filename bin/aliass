@@ -16,3 +16,4 @@ alias drep='grep -r --exclude-dir=node_modules \
                     $1'
 
 alias vim='~/.bfos/bin/vim-chooser'
+alias ducks='du -cksh $1'

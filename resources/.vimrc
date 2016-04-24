@@ -1,4 +1,3 @@
-
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -8,7 +7,6 @@ call vundle#begin()
 
 Bundle 'scrooloose/nerdtree'
 Plugin 'ryanoasis/vim-devicons'
-Bundle 'chriskempson/base16-vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'tpope/vim-rails'
@@ -17,14 +15,16 @@ Plugin 'ekalinin/Dockerfile.vim'
 Bundle 'amadeus/vim-escaper'
 Bundle 'leafgarland/typescript-vim'
 Plugin 'editorconfig/editorconfig-vim'
+Bundle 'freeo/vim-kalisi'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-" Fonts and colors
-" set background=dark
-" colorscheme base16-ashes
-" hi StatusLine ctermbg=white ctermfg=black
+" Theme
+syntax enable
+colorscheme kalisi 
+set background=dark
+
 set encoding=utf8
 set guifont=Inconsolata\ for\ Powerline\ Plus\ Nerd\ File\ Types\ Plus\ Font\ Awesome\ 12
 

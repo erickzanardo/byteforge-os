@@ -20,3 +20,5 @@ if [ -z `pgrep nm-applet` ]
 then
   nm-applet &
 fi
+
+dunst -config ~/.bfos/resources/dunstrc

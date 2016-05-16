@@ -22,3 +22,5 @@ then
 fi
 
 dunst -config ~/.bfos/resources/dunstrc
+
+start-pulseaudio-x11

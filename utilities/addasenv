@@ -1,0 +1,9 @@
+#!/bin/bash
+
+current_path=`pwd`
+
+echo "ENV Variable name: "
+
+read envname
+
+echo "$envname=$current_path" >> ~/.bashrc

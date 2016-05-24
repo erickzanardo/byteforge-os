@@ -1,0 +1,8 @@
+#!/bin/bash
+if [ "$1" = "" ]
+then
+  echo "You must pass the shortchut name"
+else
+  DIR=`pwd`
+  echo "alias $1='cd $DIR'" >> ~/bin/shortcuts
+fi

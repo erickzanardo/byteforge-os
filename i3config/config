@@ -153,7 +153,7 @@ font pango: Droid Sans Mono for Powerline Plus Nerd File Types Plus Font Awesome
 # Bar
 bar {
   font pango: Droid Sans Mono for Powerline Plus Nerd File Types Plus Font Awesome 16px
-  status_command threebar
+  status_command ~/bin/threebar
   colors {
     focused_workspace #164D1D #00CF1C #164D1D
   }

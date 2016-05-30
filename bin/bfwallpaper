@@ -1,6 +1,8 @@
 #!/bin/bash
 
-if [ -f ~/bfwallpaper ] ; then
+if [ -d ~/wallpapers ] ; then
+  ( ~/.bfos/bin/bfactivewallpaper 60000 & )
+elif [ -f ~/bfwallpaper ] ; then
   feh --bg-scale ~/bfwallpaper
 else
   feh --bg-scale ~/.bfos/images/wallpaper

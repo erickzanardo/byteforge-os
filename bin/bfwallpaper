@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ -d ~/wallpapers ] ; then
-  ( ~/.bfos/bin/bfactivewallpaper 60000 & )
+  ( ~/.bfos/bin/bfnode ~/.bfos/scripts/active-wallpaper.js 60000 & )
 elif [ -f ~/bfwallpaper ] ; then
   feh --bg-scale ~/bfwallpaper
 else

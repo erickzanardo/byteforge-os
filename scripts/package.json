@@ -1,0 +1,8 @@
+{
+  "name": "bfos-scripts",
+  "version": "1.0.0",
+  "description": "",
+  "dependencies": {
+    "threebar": "^1.0.0"
+  }
+}

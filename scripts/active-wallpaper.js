@@ -19,7 +19,7 @@ const alternateBg = (files) => {
 
 try {
   fs.statSync(folder);
-  const files = fs.readdirSync(folder).sort(_ => .5 * Math.random());
+  const files = fs.readdirSync(folder).sort(() => (Math.random() * 5) > 2.5 ? 1 : -1);
   setInterval(alternateBg(files), interv);
 } catch(e) {
   // Folder does not exists, nothing to do =)

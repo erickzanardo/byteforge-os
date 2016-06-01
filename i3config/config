@@ -152,7 +152,7 @@ font pango: Droid Sans Mono for Powerline Plus Nerd File Types Plus Font Awesome
 
 # Bar
 bar {
-  font pango: Droid Sans Mono for Powerline Plus Nerd File Types Plus Font Awesome 16px
+  font pango: DejaVu Sans Mono for Powerline Nerd Font Complete 16px
   status_command ~/.bfos/bin/bfnode ~/.bfos/scripts/node_modules/threebar/threebar.js 
   colors {
     focused_workspace #164D1D #00CF1C #164D1D

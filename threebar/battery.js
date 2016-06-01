@@ -1,8 +1,8 @@
 var CHARGER_CMD = "acpi -V | grep \"Adapter 0:\" | cut -c 12-";
 var PERCENTAGE_CMD = "acpi -V | grep -m 1 \"Battery 0:\" | sed -r \"s/.*, ([0-9]?[0-9][0-9])%.*/\\1/\"";
 
-var CHARGING_ICON = "\uf1bc"
-var BATTERY_ICON = "\uf0cd"
+var CHARGING_ICON = "\uf1e6"
+var BATTERY_ICON = "\uf0e7"
 
 var cp = require("child_process");
 

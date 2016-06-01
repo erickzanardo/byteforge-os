@@ -9,7 +9,7 @@ module.exports = function(update) {
     var command = childProcess.spawn(commandPath);
     command.stdout.on("data", function(data) {
       update("memory", [
-        "\uf078",
+        "\uf0eb",
         data.toString()
       ].join(" "));
     });

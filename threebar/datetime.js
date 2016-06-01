@@ -2,9 +2,9 @@ module.exports = function(update) {
   var updateTime = () => {
     var d = new Date();
     update("datetime", [
-        "\uf016",
+        "\uf073",
         d.toLocaleTimeString("pt-BR"),
-        "\uf06c",
+        "\uf017",
         [
           d.getDate(),
           d.getMonth() + 1,

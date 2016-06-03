@@ -182,7 +182,7 @@ mode "mouse control" {
   bindsym Escape mode "default" 
 }
 
-bindsym $mod+m mode "mouse control"
+bindsym $mod+Shift+m mode "mouse control"
 
 # Vim mode
 mode "VIM" {
@@ -258,6 +258,18 @@ bindsym $mod+Escape mode $sysmode
 # Volume control
 bindsym XF86AudioRaiseVolume exec --no-startup-id ~/.bfos/bin/bfupdatevolume 10%+
 bindsym XF86AudioLowerVolume exec --no-startup-id ~/.bfos/bin/bfupdatevolume 10%-
+
+# Media player controls
+set $cmusmode "(j) Play/pause (l) Next (h)Prev (k)Stop"
+mode $cmusmode {
+  bindsym k exec cmus-remote -C player-stop, mode "default"
+  bindsym j exec cmus-remote -u, mode "default"
+  bindsym l exec cmus-remote -C player-next
+  bindsym h exec cmus-remote -C player-prev
+
+  bindsym Escape mode "default"
+}
+bindsym $mod+m mode $cmusmode
 
 # Touchpad control
 bindsym XF86TouchpadToggle exec --no-startup-id ~/.bfos/bin/bftouchpadtoggle toggle

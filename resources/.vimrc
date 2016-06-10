@@ -16,6 +16,7 @@ Bundle 'amadeus/vim-escaper'
 Bundle 'leafgarland/typescript-vim'
 Plugin 'editorconfig/editorconfig-vim'
 Bundle 'freeo/vim-kalisi'
+Plugin 'kchmck/vim-coffee-script'
 
 call vundle#end()            " required
 filetype plugin indent on    " required

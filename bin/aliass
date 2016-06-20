@@ -8,14 +8,14 @@ alias explore='pcmanfm'
 
 alias lgrep='ll | grep $1'
 # Dev grep
-alias drep='grep -r --exclude-dir=node_modules \
-                    --exclude-dir=bower_components  \
-                    --exclude-dir=log  \
-                    --exclude-dir=tmp  \
-                    --exclude-dir=vendor  \
-                    --exclude-dir=.git  \
-                    --exclude-dir=target  \
-                    $1'
+alias drep='grep -rn --exclude-dir=node_modules \
+                     --exclude-dir=bower_components  \
+                     --exclude-dir=log  \
+                     --exclude-dir=tmp  \
+                     --exclude-dir=vendor  \
+                     --exclude-dir=.git  \
+                     --exclude-dir=target  \
+                     $1'
 
 alias vim='~/.bfos/bin/vim-chooser'
 alias ducks='du -cksh $1'

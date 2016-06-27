@@ -17,6 +17,8 @@ Bundle 'leafgarland/typescript-vim'
 Plugin 'editorconfig/editorconfig-vim'
 Bundle 'freeo/vim-kalisi'
 Plugin 'kchmck/vim-coffee-script'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'derekwyatt/vim-scala'
 
 call vundle#end()            " required
 filetype plugin indent on    " required

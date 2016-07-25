@@ -115,6 +115,16 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
+mode "Caps" {
+  bindsym Caps_Lock mode "default"
+}
+bindsym Caps_Lock mode "Caps"
+
+mode "Num" {
+  bindsym Num_Lock mode "default"
+}
+bindsym Num_Lock mode "Num"
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode

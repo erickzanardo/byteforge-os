@@ -1,6 +1,6 @@
 var fs = require("fs");
 
-var home = require("./homepath");
+var home = require("./../scripts/homepath");
 var path = require("path");
 
 var FILE = path.join(home(), ".bfvolume");

@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "dependencies": {
+    "play-sound": "0.0.9",
     "threebar": "^1.0.0"
   }
 }

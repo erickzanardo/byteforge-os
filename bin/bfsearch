@@ -1,0 +1,3 @@
+#!/bin/bash
+i3-input -F 'exec x-www-browser "https://www.google.com.br/search?q=%s"' -P 'Search term: '
+i3-msg '[title="Google"] focus'

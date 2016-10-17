@@ -285,11 +285,11 @@ bindsym $mod+m mode $cmusmode
 set $pomodoromode "Pomodoro: (B)tart (S)hort break (L)ong break"
 mode $pomodoromode {
   #                                                                          25 minutes
-  bindsym b exec --no-startup-id ~/.bfos/bin/bfnode ~/.bfos/scripts/alarm.js 1500, mode "default"
+  bindsym b exec --no-startup-id ~/.bfos/bin/bfnode ~/.bfos/scripts/alarm.js 1500 "25\ minutes\ pomodoro\ done", mode "default"
   #                                                                          5 minutes
-  bindsym s exec --no-startup-id ~/.bfos/bin/bfnode ~/.bfos/scripts/alarm.js 300, mode "default"
-  #                                                                          25 minutes
-  bindsym l exec --no-startup-id ~/.bfos/bin/bfnode ~/.bfos/scripts/alarm.js 600, mode "default"
+  bindsym s exec --no-startup-id ~/.bfos/bin/bfnode ~/.bfos/scripts/alarm.js 300 "5\ minutes\ break\ done", mode "default"
+  #                                                                          10 minutes
+  bindsym l exec --no-startup-id ~/.bfos/bin/bfnode ~/.bfos/scripts/alarm.js 600 "10\ minutes\ break\ done", mode "default"
 
   bindsym Escape mode "default"
 }
@@ -301,6 +301,9 @@ bindsym XF86TouchpadToggle exec --no-startup-id ~/.bfos/bin/bftouchpadtoggle tog
 
 #Printscreen
 bindsym $mod+p exec ~/.bfos/bin/bfprintscreen
+
+# Search
+bindsym $mod+Shift+s exec ~/.bfos/bin/bfsearch
 
 # Gif Recordering mode
 set $recordingmode "Recording, press ESC to stop"

@@ -3,7 +3,7 @@
 if [ -d ~/wallpapers ] ; then
   PROCESS=`ps aux | grep "[a]ctive-wallpaper"`
   if [ "$PROCESS" = "" ] ; then
-    ( ~/.bfos/bin/bfnode ~/.bfos/scripts/active-wallpaper.js 60000 & )
+    ( ~/.bfos/bin/bfnode ~/.bfos/system/run active-wallpaper 60000 & )
   fi
 elif [ -f ~/bfwallpaper ] ; then
   feh --bg-scale ~/bfwallpaper

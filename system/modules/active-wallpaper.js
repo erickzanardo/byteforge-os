@@ -4,8 +4,6 @@ const cp = require("child_process");
 
 const folder = `${ process.env.HOME }/wallpapers`;
 
-const interv = parseInt(process.argv[2] || "10000");
-
 let current = 0;
 const alternateBg = (files) => {
   const fn = () => {
@@ -17,10 +15,13 @@ const alternateBg = (files) => {
   return fn;
 }
 
-try {
-  fs.statSync(folder);
-  const files = fs.readdirSync(folder).sort(() => (Math.random() * 5) > 2.5 ? 1 : -1);
-  setInterval(alternateBg(files), interv);
-} catch(e) {
-  // Folder does not exists, nothing to do =)
+module.exports = (arg) => {
+  const interv = parseInt(arg || "10000");
+  try {
+    fs.statSync(folder);
+    const files = fs.readdirSync(folder).sort(() => (Math.random() * 5) > 2.5 ? 1 : -1);
+    setInterval(alternateBg(files), interv);
+  } catch(e) {
+    // Folder does not exists, nothing to do =)
+  }
 }

@@ -1,4 +1,4 @@
-var home = require("./../scripts/homepath");
+var home = require("./../system/modules/homepath");
 var path = require("path");
 var childProcess = require("child_process");
 

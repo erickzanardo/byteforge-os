@@ -9,6 +9,8 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
+set $RUN ~/.bfos/bin/bfnode ~/.bfos/system/run.js
+
 set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -163,7 +165,7 @@ font pango: Droid Sans Mono for Powerline Plus Nerd File Types Plus Font Awesome
 # Bar
 bar {
   font pango: DejaVu Sans Mono for Powerline Nerd Font Complete 16px
-  status_command ~/.bfos/bin/bfnode ~/.bfos/scripts/node_modules/threebar/threebar.js 
+  status_command ~/.bfos/bin/bfnode ~/.bfos/system/node_modules/threebar/threebar.js 
   colors {
     focused_workspace #164D1D #00CF1C #164D1D
   }
@@ -256,10 +258,10 @@ bindsym $mod+c exec i3-input -F 'exec %s' -P 'Command: '
 # System functions
 set $sysmode "(S)hutdown L(o)gout (R)eboot (L)ock"
 mode $sysmode {
-  bindsym s exec --no-startup-id ~/.bfos/bin/bfshutdown, mode "default"
-  bindsym o exec --no-startup-id ~/.bfos/bin/bflogout logout, mode "default"
-  bindsym r exec --no-startup-id ~/.bfos/bin/bfreboot, mode "default"
-  bindsym l exec --no-startup-id ~/.bfos/bin/bflockscreen, mode "default"
+  bindsym s exec --no-startup-id $RUN system.shutdown, mode "default"
+  bindsym o exec --no-startup-id $RUN system.logout, mode "default"
+  bindsym r exec --no-startup-id $RUN system.reboot, mode "default"
+  bindsym l exec --no-startup-id $RUN system.lock, mode "default"
 
   bindsym Escape mode "default"
 }
@@ -285,11 +287,11 @@ bindsym $mod+m mode $cmusmode
 set $pomodoromode "Pomodoro: (B)tart (S)hort break (L)ong break"
 mode $pomodoromode {
   #                                                                          25 minutes
-  bindsym b exec --no-startup-id ~/.bfos/bin/bfnode ~/.bfos/scripts/alarm.js 1500 "25\ minutes\ pomodoro\ done", mode "default"
+  bindsym b exec --no-startup-id $RUN alarm 1500 "25\ minutes\ pomodoro\ done", mode "default"
   #                                                                          5 minutes
-  bindsym s exec --no-startup-id ~/.bfos/bin/bfnode ~/.bfos/scripts/alarm.js 300 "5\ minutes\ break\ done", mode "default"
+  bindsym s exec --no-startup-id $RUN alarm 300 "5\ minutes\ break\ done", mode "default"
   #                                                                          10 minutes
-  bindsym l exec --no-startup-id ~/.bfos/bin/bfnode ~/.bfos/scripts/alarm.js 600 "10\ minutes\ break\ done", mode "default"
+  bindsym l exec --no-startup-id $RUN alarm 600 "10\ minutes\ break\ done", mode "default"
 
   bindsym Escape mode "default"
 }

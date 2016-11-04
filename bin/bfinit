@@ -24,3 +24,5 @@ fi
 dunst -config ~/.bfos/resources/dunstrc
 
 start-pulseaudio-x11
+
+~/.bfos/bin/bfnode ~/.bfos/system/run.js "sky/sky.start"

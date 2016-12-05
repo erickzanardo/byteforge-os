@@ -17,7 +17,7 @@ if (command) {
     return console.error(`Module ${moduleName} does not have the method ${moduleMethodName}`);
   } 
 
-  moduleMethod.call(null, args);
+  moduleMethod.apply(null, args);
 } else {
   console.error(`Invalid command`)
 }

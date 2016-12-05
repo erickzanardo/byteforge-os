@@ -19,6 +19,8 @@ Bundle 'freeo/vim-kalisi'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'derekwyatt/vim-scala'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 call vundle#end()            " required
 filetype plugin indent on    " required

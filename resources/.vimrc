@@ -21,6 +21,7 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'derekwyatt/vim-scala'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Bundle 'slim-template/vim-slim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -52,7 +53,6 @@ noremap <right> <nop>
 let g:lightline = { 'colorscheme': 'wombat' }
 
 filetype plugin indent on
-
 
 autocmd FileType make setlocal expandtab tabstop=4 shiftwidth=4
 autocmd FileType sh setlocal expandtab tabstop=2 shiftwidth=2

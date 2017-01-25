@@ -160,11 +160,11 @@ bindsym $mod+e exec pcmanfm
 exec_always ~/.bfos/bin/bfinit
 
 # System font
-font pango: Droid Sans Mono for Powerline Plus Nerd File Types Plus Font Awesome 16px bold
+font pango: DroidSansMonoForPowerline Nerd Font 16px bold
 
 # Bar
 bar {
-  font pango: DejaVu Sans Mono for Powerline Nerd Font Complete 16px
+  font pango: DroidSansMonoForPowerline Nerd Font 16px
   status_command ~/.bfos/bin/bfnode ~/.bfos/system/node_modules/threebar/threebar.js 
   colors {
     focused_workspace #164D1D #00CF1C #164D1D
@@ -286,12 +286,9 @@ bindsym $mod+m mode $cmusmode
 # Pomodoro mode
 set $pomodoromode "Pomodoro: (B)tart (S)hort break (L)ong break"
 mode $pomodoromode {
-  #                                                                          25 minutes
-  bindsym b exec --no-startup-id $RUN alarm 1500 "25\ minutes\ pomodoro\ done", mode "default"
-  #                                                                          5 minutes
-  bindsym s exec --no-startup-id $RUN alarm 300 "5\ minutes\ break\ done", mode "default"
-  #                                                                          10 minutes
-  bindsym l exec --no-startup-id $RUN alarm 600 "10\ minutes\ break\ done", mode "default"
+  bindsym b exec --no-startup-id $RUN "pomodoro.start", mode "default"
+  bindsym s exec --no-startup-id $RUN "pomodoro.smallBreak", mode "default"
+  bindsym l exec --no-startup-id $RUN "pomodoro.longBreak", mode "default"
 
   bindsym Escape mode "default"
 }

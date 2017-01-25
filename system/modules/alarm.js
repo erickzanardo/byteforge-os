@@ -2,7 +2,7 @@ const player = require("play-sound")(opts = {});
 const homepath = require("./homepath");
 const toast = require("./toast");
 
-module.exports = (seconds, message) => {
+module.exports = (seconds, message, callback) => {
   if (!seconds) return console.error("No parameter was specified.");
 	
   seconds = parseInt(seconds, 10);
@@ -13,5 +13,6 @@ module.exports = (seconds, message) => {
   setTimeout(() => {
     toast.normal("Alarm", message);
     player.play(homepath() + "/.bfos/resources/sfx/alarm.wav", () => console.log("alarm execution successful"));
+    if (callback) callback();
   }, seconds);
 }

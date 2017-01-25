@@ -1,24 +1,24 @@
 [global_config]
   enabled_plugins = LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
 [keybindings]
-[profiles]
-  [[default]]
-    use_system_font = False
-    login_shell = True
-    background_darkness = 0.93
-    background_type = transparent
-    background_image = None
-    cursor_color = "#0d5f09"
-    foreground_color = "#00ff00"
-    show_titlebar = False
-    font = Droid Sans Mono for Powerline Plus Nerd File Types Plus Font Awesome 13
-    scrollback_infinite = True
 [layouts]
   [[default]]
     [[[child1]]]
-      type = Terminal
       parent = window0
+      type = Terminal
     [[[window0]]]
-      type = Window
       parent = ""
+      type = Window
 [plugins]
+[profiles]
+  [[default]]
+    background_darkness = 0.93
+    background_image = None
+    background_type = transparent
+    cursor_color = "#0d5f09"
+    font = DroidSansMonoForPowerline Nerd Font 13
+    foreground_color = "#00ff00"
+    login_shell = True
+    scrollback_infinite = True
+    show_titlebar = False
+    use_system_font = False

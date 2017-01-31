@@ -19,3 +19,4 @@ alias drep='grep -rn --exclude-dir=node_modules \
 
 alias vim='~/.bfos/bin/vim-chooser'
 alias ducks='du -cksh $1'
+alias untar='tar -zxvf'

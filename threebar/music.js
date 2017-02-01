@@ -10,14 +10,14 @@ const exec = cmd => cp.execSync(cmd).toString().replace("\n", "");
 
 const isPlaying = () => exec(STATUS_CMD) === "playing";
 const currentPlay = () => exec(NOW_PLAYING_CMD);
-
-console.log(currentPlay());
+const cut = (text, size) =>
+  text.length > size ? `${text.substring(0, size)}...` : text
 
 module.exports = update => {
   const updateMusic = () => {
     update("music", [
         isPlaying() ? PLAYING_ICON : STOPPED_ICON,
-        currentPlay()
+        cut(currentPlay(), 16)
     ].join(" "));
     setTimeout(updateMusic, 60000);
   };

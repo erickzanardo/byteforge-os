@@ -22,6 +22,7 @@ Plugin 'derekwyatt/vim-scala'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Bundle 'slim-template/vim-slim'
+Bundle 'nikvdp/ejs-syntax'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -57,12 +58,14 @@ filetype plugin indent on
 autocmd FileType make setlocal expandtab tabstop=4 shiftwidth=4
 autocmd FileType sh setlocal expandtab tabstop=2 shiftwidth=2
 autocmd FileType html setlocal expandtab tabstop=2 shiftwidth=2
+autocmd FileType ejs setlocal expandtab tabstop=2 shiftwidth=2
 autocmd FileType erb setlocal expandtab tabstop=2 shiftwidth=2
 autocmd FileType typescript setlocal expandtab tabstop=2 shiftwidth=2
 autocmd FileType java setlocal expandtab tabstop=4 shiftwidth=4
 autocmd FileType ruby setlocal expandtab tabstop=2 shiftwidth=2
 autocmd FileType css setlocal expandtab tabstop=2 shiftwidth=2
 autocmd FileType javascript setlocal expandtab tabstop=2 shiftwidth=2
+autocmd FileType coffee setlocal expandtab tabstop=2 shiftwidth=2
 autocmd FileType yml setlocal expandtab tabstop=2 shiftwidth=2
 autocmd FileType lua setlocal expandtab tabstop=2 shiftwidth=2
 

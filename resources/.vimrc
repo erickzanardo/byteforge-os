@@ -23,6 +23,8 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Bundle 'slim-template/vim-slim'
 Bundle 'nikvdp/ejs-syntax'
+Plugin 'jparise/vim-graphql'
+Plugin 'pangloss/vim-javascript'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -65,9 +67,11 @@ autocmd FileType java setlocal expandtab tabstop=4 shiftwidth=4
 autocmd FileType ruby setlocal expandtab tabstop=2 shiftwidth=2
 autocmd FileType css setlocal expandtab tabstop=2 shiftwidth=2
 autocmd FileType javascript setlocal expandtab tabstop=2 shiftwidth=2
+autocmd FileType json setlocal expandtab tabstop=2 shiftwidth=2
 autocmd FileType coffee setlocal expandtab tabstop=2 shiftwidth=2
 autocmd FileType yml setlocal expandtab tabstop=2 shiftwidth=2
 autocmd FileType lua setlocal expandtab tabstop=2 shiftwidth=2
+autocmd FileType graphql setlocal expandtab tabstop=2 shiftwidth=2
 
 let g:EclimCompletionMethod = 'omnifunc'
 

@@ -25,6 +25,7 @@ Bundle 'slim-template/vim-slim'
 Bundle 'nikvdp/ejs-syntax'
 Plugin 'jparise/vim-graphql'
 Plugin 'pangloss/vim-javascript'
+Plugin 'ap/vim-css-color'
 
 call vundle#end()            " required
 filetype plugin indent on    " required

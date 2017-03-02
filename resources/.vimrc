@@ -26,9 +26,14 @@ Bundle 'nikvdp/ejs-syntax'
 Plugin 'jparise/vim-graphql'
 Plugin 'pangloss/vim-javascript'
 Plugin 'ap/vim-css-color'
+Plugin 'mxw/vim-jsx'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
+
+
+" JSX enabled for js files
+let g:jsx_ext_required = 0
 
 " Theme
 syntax enable

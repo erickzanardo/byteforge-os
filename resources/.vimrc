@@ -81,6 +81,9 @@ autocmd FileType graphql setlocal expandtab tabstop=2 shiftwidth=2
 
 let g:EclimCompletionMethod = 'omnifunc'
 
+" gradle as groovy
+au BufNewFile,BufRead *.gradle setf groovy
+
 " Window moving
 nmap <C-h> <C-w>h
 nmap <C-j> <C-w>j

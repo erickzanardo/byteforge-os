@@ -27,6 +27,7 @@ Plugin 'jparise/vim-graphql'
 Plugin 'pangloss/vim-javascript'
 Plugin 'ap/vim-css-color'
 Plugin 'mxw/vim-jsx'
+Plugin 'flowtype/vim-flow'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -131,3 +132,10 @@ let g:ctrlp_custom_ignore = {
   \ }
 " Follow symbolic links
 let g:ctrlp_follow_symlinks = 1 
+
+" only enable flow if .flowconfig exists
+if filereadable(".flowconfig")
+  let g:flow#enable = 1
+else
+  let g:flow#enable = 0
+endif

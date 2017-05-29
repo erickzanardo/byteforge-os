@@ -20,14 +20,12 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'derekwyatt/vim-scala'
 Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
 Bundle 'slim-template/vim-slim'
 Bundle 'nikvdp/ejs-syntax'
 Plugin 'jparise/vim-graphql'
 Plugin 'pangloss/vim-javascript'
 Plugin 'ap/vim-css-color'
 Plugin 'mxw/vim-jsx'
-Plugin 'flowtype/vim-flow'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -133,9 +131,5 @@ let g:ctrlp_custom_ignore = {
 " Follow symbolic links
 let g:ctrlp_follow_symlinks = 1 
 
-" only enable flow if .flowconfig exists
-if filereadable(".flowconfig")
-  let g:flow#enable = 1
-else
-  let g:flow#enable = 0
-endif
+" So react auto reload works ¯\_(ツ)_/¯
+:set backupcopy=yes

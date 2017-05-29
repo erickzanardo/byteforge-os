@@ -17,6 +17,7 @@ alias drep='grep -rn --exclude-dir=node_modules \
                      --exclude-dir=target  \
                      --exclude-dir=build \
                      --exclude-dir=dist \
+                     --exclude-dir=coverage \
                      $1'
 
 alias vim='~/.bfos/bin/vim-chooser'

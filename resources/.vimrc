@@ -39,6 +39,7 @@ let g:jsx_ext_required = 0
 syntax enable
 colorscheme kalisi 
 set background=dark
+set t_Co=256
 
 set encoding=utf8
 set guifont=Inconsolata\ for\ Powerline\ Plus\ Nerd\ File\ Types\ Plus\ Font\ Awesome\ 12

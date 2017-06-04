@@ -20,7 +20,6 @@ alias drep='grep -rn --exclude-dir=node_modules \
                      --exclude-dir=coverage \
                      $1'
 
-alias vim='~/.bfos/bin/vim-chooser'
 alias ducks='du -cksh $1'
 alias untar='tar -zxvf'
 alias git-ignore='echo"$1" >> .gitignore'

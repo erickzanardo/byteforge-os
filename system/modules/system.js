@@ -14,8 +14,8 @@ module.exports = {
   },
   lock: () => {
     sky.scriptedPhrase("lock").then(() => {
-      exec("xrandr | grep \* | cut -c 4-12 | tail -1", (error, stdout, stderr) => 
-        exec(`convert -resize ${stdout} ~/.bfos/images/lockscreenimage.png /tmp/locksreenimage.png`, () =>
+      exec("xrandr | grep \\* | cut -c 4-12 | tail -1", (error, stdout, stderr) => 
+        exec(`convert -resize ${stdout.replace("\n", "")} ~/.bfos/images/lockscreenimage.png /tmp/locksreenimage.png`, () =>
           exec("i3lock -i /tmp/locksreenimage.png -c 000000"))
       );
     });

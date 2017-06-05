@@ -1,0 +1,7 @@
+#!/bin/bash
+
+source ~/.bfos/bin/aliass
+source ~/.bfos/resources/ps1
+source ~/.bfos/bin/greeting
+
+export PATH="$PATH:~/.bfos/system/node_modules/.bin"

@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "dependencies": {
+    "git-cutlass": "^1.0.6",
+    "pico-speaker": "git@github.com:tom-s/pico-speaker.git#e1822e264d236b196f0d87830c6e9b9d8db7d13e",
     "play-sound": "0.0.9",
-    "threebar": "^1.0.0",
-    "pico-speaker": "git@github.com:tom-s/pico-speaker.git#e1822e264d236b196f0d87830c6e9b9d8db7d13e"
+    "threebar": "^1.0.0"
   }
 }

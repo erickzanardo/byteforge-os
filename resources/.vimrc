@@ -31,6 +31,9 @@ Plugin 'flowtype/vim-flow'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
+" Search highlight and searching as you type
+set hlsearch
+set incsearch
 
 " JSX enabled for js files
 let g:jsx_ext_required = 0

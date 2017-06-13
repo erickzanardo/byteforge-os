@@ -14,7 +14,19 @@ function ps1_project_type() {
 
   if [ -e "package.json" ]
   then
-    STATUS="$STATUS[ \ue71e ]"
+    STATUS="$STATUS[ \ue71e "
+
+    if [ -e ".nvmrc" ]
+    then
+      CURRENT_NODE=`node --version`
+      REQUIRED_NODE=`cat .nvmrc`
+
+      if [ "$CURRENT_NODE" !=  "$REQUIRED_NODE" ]
+      then
+        STATUS="$STATUS \uf071"
+      fi
+    fi
+    STATUS="$STATUS ]"
   fi
 
   if [ -e "bower.json" ]

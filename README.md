@@ -15,3 +15,4 @@ my i3 window manager config
 - gifrecorder (https://github.com/erickzanardo/gifrecorder)
 - pcmanfm
 - Node v4.1.0
+- inotify-tools

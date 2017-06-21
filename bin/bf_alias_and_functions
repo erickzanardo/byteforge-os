@@ -1,0 +1,45 @@
+#!/bin/bash
+alias dog='pygmentize -g'
+alias dogjson='python -m json.tool | dog -l json'
+alias ll='ls -al'
+alias pss='ps aux | grep $1'
+alias copy='xclip -sel clipboard'
+alias explore='pcmanfm'
+
+alias lgrep='ll | grep $1'
+
+# Dev grep
+
+function drep {
+  grep -rn --exclude-dir=node_modules \
+           --exclude-dir=bower_components  \
+           --exclude-dir=log  \
+           --exclude-dir=tmp  \
+           --exclude-dir=vendor  \
+           --exclude-dir=.git  \
+           --exclude-dir=target  \
+           --exclude-dir=build \
+           --exclude-dir=dist \
+           --exclude-dir=coverage \
+           $1
+}
+
+alias ducks='du -cksh $1'
+alias untar='tar -zxvf'
+alias git-ignore='echo"$1" >> .gitignore'
+
+function wdrep {
+  clear
+  drep "$1"
+  inotifywait -qmr -e close_write . | while read date time dir file; do
+    if [ "$dir" != "" ]
+    then
+      if [ "$(echo "$dir" | grep -v ".*lock\|swp\|swx$")" != "" ]
+      then
+        clear
+        echo "Changed $dir"
+        drep "$1"
+      fi
+    fi
+  done
+}

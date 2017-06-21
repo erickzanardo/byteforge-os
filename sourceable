@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source ~/.bfos/bin/aliass
+source ~/.bfos/bin/bf_alias_and_functions
 source ~/.bfos/resources/ps1
 source ~/.bfos/bin/greeting
 

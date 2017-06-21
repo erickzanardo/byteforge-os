@@ -145,3 +145,6 @@ if filereadable(".flowconfig")
 else
   let g:flow#enable = 0
 endif
+
+" ctrlp ignore
+set wildignore+=node_modules

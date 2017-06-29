@@ -43,3 +43,5 @@ function wdrep {
     fi
   done
 }
+
+alias shrug='echo "¯\_(ツ)_/¯"'

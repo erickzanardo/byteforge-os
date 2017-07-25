@@ -28,20 +28,40 @@ alias ducks='du -cksh $1'
 alias untar='tar -zxvf'
 alias git-ignore='echo"$1" >> .gitignore'
 
-function wdrep {
-  clear
-  drep "$1"
+function war {
+  local OPTIND opt cmd ignore
+
+  while getopts ":i:" opt; do
+      case $opt in
+      i) ignore=$OPTARG;
+      esac
+  done
+  shift $((OPTIND-1))
+
+  if [ "$ignore" != "" ]
+  then
+    ignore="\|$ignore"
+  fi
+
+  cmd=$@
+
   inotifywait -qmr -e close_write . | while read date time dir file; do
     if [ "$dir" != "" ]
     then
-      if [ "$(echo "$dir" | grep -v ".*lock\|swp\|swx$")" != "" ]
+      if [ "$(echo "$dir" | grep -v ".*lock\|swp\|swx\|~\|log$ignore$")" != "" ]
       then
         clear
         echo "Changed $dir"
-        drep "$1"
+        $cmd
       fi
     fi
   done
+}
+
+function wdrep {
+  clear
+  drep "$1"
+  war drep "$1"
 }
 
 alias shrug='echo "¯\_(ツ)_/¯"'

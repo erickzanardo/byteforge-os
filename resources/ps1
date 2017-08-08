@@ -19,7 +19,7 @@ function ps1_project_type() {
     if [ -e ".nvmrc" ]
     then
       CURRENT_NODE=`node --version`
-      REQUIRED_NODE=`cat .nvmrc`
+      REQUIRED_NODE=`nvm_version $(cat .nvmrc)`
 
       if [ "$CURRENT_NODE" !=  "$REQUIRED_NODE" ]
       then

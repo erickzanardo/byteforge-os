@@ -2,10 +2,11 @@ const { exec } = require("node-exec-promise");
 const { contains, filter, prop, propEq } = require("ramda");
 const fs = require("fs-extra");
 const homepath = require("./homepath");
-
-const CONFIG_FILE = `${homepath()}/.bfdisplays`;
+const { loadPreferences, setPreference } = require("./preference-storage")
 
 const connectedDislays = () => displays().then(filter(propEq("connected", true), displays));
+
+const PREFERENCE_KEY = "video";
 
 const parseDisplayLine = line => {
   const lineSplit = line.split(" ");
@@ -75,10 +76,10 @@ const configDisplay = (display, resolution, position) => {
   return exec(`xrandr --output "${display}" ${resolutionOpt} ${positionOpt}`);
 }
 
-const persistCurrentConfig = () => fs.writeJson(CONFIG_FILE, connectedDislays());
+const persistCurrentConfig = () => setPreference(PREFERENCE_KEY, connectedDislays());
 
 const initDisplays = () =>
-  Promise.all([ connectedDislays(), fs.readJson(CONFIG_FILE) ])
+  Promise.all([ connectedDislays(), loadPreferences().then(prop(PREFERENCE_KEY)) ])
     .then(([ currentDisplays, persistedDisplays ])  => {
 
       const currentDisplayNames = currentDisplays.map(prop("display"));

@@ -40,7 +40,7 @@ let g:jsx_ext_required = 0
 
 " Theme
 syntax enable
-colorscheme kalisi 
+colorscheme kalisi
 set background=dark
 set t_Co=256
 
@@ -108,9 +108,13 @@ nmap <right> :vertical resize +5<CR>
 vmap <C-c> "+y
 nmap <C-b> "+p
 
-" Autoopen nerdtree
+" NERDTree
+" Autoopen
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+" Open shortcut
+map <C-n> :NERDTreeToggle<CR>
 
 " erb files bugs
 au BufNewFile,BufRead *.html.erb set filetype=html
@@ -138,7 +142,7 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\v\.(exe|so|dll|class|war)$'
   \ }
 " Follow symbolic links
-let g:ctrlp_follow_symlinks = 1 
+let g:ctrlp_follow_symlinks = 1
 
 " So react auto reload works ¯\_(ツ)_/¯
 :set backupcopy=yes
@@ -169,3 +173,11 @@ endfunction
 command! -complete=shellcmd -nargs=+ Shell call s:ExecuteInShell(<q-args>)
 command! -complete=file -nargs=* Npm call s:ExecuteInShell('npm '.<q-args>)
 command! -complete=file -nargs=* Curl call s:ExecuteInShell('curl '.<q-args>)
+
+" Trailing whitespaces
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+
+" Vertical and Horizontal
+command Horizontal windo wincmd K
+command Vertical windo wincmd H

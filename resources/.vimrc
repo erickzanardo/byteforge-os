@@ -27,6 +27,10 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'ap/vim-css-color'
 Plugin 'mxw/vim-jsx'
 Plugin 'flowtype/vim-flow'
+Plugin 'w0rp/ale'
+Bundle 'moll/vim-node'
+Bundle 'posva/vim-vue'
+Bundle 'dart-lang/dart-vim-plugin'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -181,3 +185,15 @@ match ExtraWhitespace /\s\+$/
 " Vertical and Horizontal
 command Horizontal windo wincmd K
 command Vertical windo wincmd H
+
+" ALE config
+let g:ale_linters = {
+\   'javascript': ['eslint'],
+\}
+
+" YouCompleteMe
+set completeopt-=preview
+
+" Indent
+hi IndentGuidesOdd  ctermbg=black
+hi IndentGuidesEven ctermbg=darkgrey

@@ -48,7 +48,9 @@ const parseXrandrOutput = output => output.split("\n")
   .filter(line => line !== "")
   .reduce((displays, line) => {
     if (line[0] == " ") {
-      displays[displays.length - 1].modes.concat([ parseModeLine(line) ]);
+      const display = displays[displays.length - 1]
+      display.modes = display.modes.concat([ parseModeLine(line) ]);
+
       return displays;
     } else {
       return displays.concat([ parseDisplayLine(line) ]);

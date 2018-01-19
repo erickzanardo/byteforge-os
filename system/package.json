@@ -2,6 +2,9 @@
   "name": "bfos-system",
   "version": "1.0.0",
   "description": "",
+  "bin": {
+    "bf-video": "./modules/tools/monitors.js"
+  },
   "dependencies": {
     "fs-extra": "^3.0.1",
     "git-cutlass": "^1.0.6",

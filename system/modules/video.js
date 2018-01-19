@@ -13,7 +13,7 @@ const parseDisplayLine = line => {
   const [ display, connected, primary ] = lineSplit;
 
   const isConnected = connected == "connected";
-  
+
   if (!isConnected) {
     return ({
       display,
@@ -60,8 +60,42 @@ const parseXrandrOutput = output => output.split("\n")
 
 const displays = () => exec("xrandr").then(parseXrandrOutput);
 
+const checkResolution = (display, resolution) =>
+  new Promise((resolve, reject) => {
+    const matches = display.modes.filter(res => Math.abs(res.width - resolution.width) <= 10 && Math.abs(res.height - resolution.height) <= 10)
+
+    resolve(matches[0])
+  })
+
+const addResolution = (display, { width, height }) =>
+  exec(`cvt ${width} ${height}`)
+    .then(output => output.split("\n"))
+    .then(filter(line => line.indexOf("Modeline") == 0))
+    .then(([line]) => line.replace("Modeline ", ""))
+    .then(line => line.replace(/_[0-9][0-9]\.[0-9][0-9]/, ""))
+    .then(modeline => {
+      const modename = modeline.match(/"(.*)"/)[1]
+
+      return exec(`xrandr --newmode ${modeline}`)
+        .then(() => exec(`xrandr --addmode ${display.display} ${modename}`))
+        .then(() => modename)
+    })
+
+
+const res = ({ width, height }) => `${width}x${height}`
+
+const mirrorDisplays = (main, second) =>
+  checkResolution(second, main.resolution)
+    .then(resolution => {
+      const mirror = newRes => exec(`xrandr --output ${second.display} --mode ${newRes} --same-as ${main.display}`)
+
+      return resolution
+        ? mirror(res(resolution))
+        : addResolution(second, main.resolution).then(mirror)
+    })
+
 const configDisplay = (display, resolution, position) => {
-  const resolutionOpt = 
+  const resolutionOpt =
     resolution == resolution ?
       "auto" ?
         "--auto" :
@@ -94,6 +128,7 @@ const initDisplays = () =>
     });
 
 module.exports = {
+  mirrorDisplays,
   configDisplay,
   displays,
   initDisplays,

@@ -5,3 +5,5 @@ source ~/.bfos/resources/ps1
 source ~/.bfos/bin/greeting
 
 export PATH="$PATH:~/.bfos/system/node_modules/.bin"
+export PATH="$PATH:~/.bfos/bin"
+export PATH="$PATH:~/.bfos/system/modules/tools"

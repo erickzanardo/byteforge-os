@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/home/erick/.bfos/bin/bfnode
 
 const { exec } = require("node-exec-promise");
 

@@ -1,9 +1,9 @@
 #!/bin/bash
 
-wget https://nodejs.org/dist/v6.2.0/node-v6.2.0-linux-x64.tar.xz
-tar xf node-v6.2.0-linux-x64.tar.xz
-rm node-v6.2.0-linux-x64.tar.xz
-mv node-v6.2.0-linux-x64 node
+wget https://nodejs.org/dist/v8.9.4/node-v8.9.4-linux-x64.tar.xz
+tar xf node-v8.9.4-linux-x64.tar.xz
+rm  node-v8.9.4-linux-x64.tar.xz
+mv node-v8.9.4-linux-x64  node
 
 ln -s ~/.bfos/node/node/bin/node ~/.bfos/bin/bfnode
 ln -s ~/.bfos/node/node/bin/npm ~/.bfos/bin/bfnpm

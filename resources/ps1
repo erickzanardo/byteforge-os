@@ -9,12 +9,12 @@ function ps1_project_type() {
 
   if [ -e "Gemfile" ]
   then
-    STATUS="[\ue739 ]"
+    STATUS="[ ]"
   fi
 
   if [ -e "package.json" ]
   then
-    STATUS="$STATUS[ \ue71e "
+    STATUS="$STATUS[   "
 
     if [ -e ".nvmrc" ]
     then
@@ -23,7 +23,7 @@ function ps1_project_type() {
 
       if [ "$CURRENT_NODE" !=  "$REQUIRED_NODE" ]
       then
-        STATUS="$STATUS \uf071"
+        STATUS="$STATUS "
       fi
     fi
     STATUS="$STATUS ]"
@@ -31,22 +31,22 @@ function ps1_project_type() {
 
   if [ -e "bower.json" ]
   then
-    STATUS="$STATUS[\ue74d ]"
+    STATUS="$STATUS[ ]"
   fi
 
   if [ -e "gulpfile.js" ]
   then
-    STATUS="$STATUS[\ue763 ]"
+    STATUS="$STATUS[ ]"
   fi
 
   if [ -e "Dockerfile" ]
   then
-    STATUS="$STATUS[\ue7b0 ]"
+    STATUS="$STATUS[ ]"
   fi
 
   if [ -e "pom.xml" ]
   then
-    STATUS="$STATUS[ \ue738 ]"
+    STATUS="$STATUS[  ]"
   fi
 
   echo -e $STATUS
@@ -58,7 +58,7 @@ function ps1_git() {
   local branch=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
   if [ "$branch" != "" ]
   then
-    STATUS="\ue702 $branch"
+    STATUS=" $branch"
 
     DIFF=`git status --porcelain`
     if [ "$DIFF" != "" ]
@@ -66,9 +66,9 @@ function ps1_git() {
       STATUS="$STATUS*"
     fi
     STATUS=" [$STATUS] "
-  fi 
+  fi
 
   echo -e $STATUS
 }
 
-export PS1=$'\u@\h \[\e[0;34m\][`ps1_curr_dir`]\[\e[0;33m\]`ps1_git`\[\e[0;32m\]`ps1_project_type`\[\e[1;32m\] \uf120\[\e[0;m\]  '
+export PS1=$'\u@\h \[\e[0;34m\][`ps1_curr_dir`]\[\e[0;33m\]`ps1_git`\[\e[0;32m\]`ps1_project_type`\[\e[1;32m\] \[\e[0;m\]  '

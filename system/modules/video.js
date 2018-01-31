@@ -4,7 +4,7 @@ const fs = require("fs-extra");
 const homepath = require("./homepath");
 const { loadPreferences, setPreference } = require("./preference-storage")
 
-const connectedDislays = () => displays().then(filter(propEq("connected", true), displays));
+const connectedDisplays = () => displays().then(filter(propEq("connected", true)));
 
 const PREFERENCE_KEY = "video";
 
@@ -112,10 +112,12 @@ const configDisplay = (display, resolution, position) => {
   return exec(`xrandr --output "${display}" ${resolutionOpt} ${positionOpt}`);
 }
 
-const persistCurrentConfig = () => setPreference(PREFERENCE_KEY, connectedDislays());
+const persistCurrentConfig = () => 
+  connectedDisplays()
+    .then(displays => setPreference(PREFERENCE_KEY, displays));
 
 const initDisplays = () =>
-  Promise.all([ connectedDislays(), loadPreferences().then(prop(PREFERENCE_KEY)) ])
+  Promise.all([ connectedDisplays(), loadPreferences().then(prop(PREFERENCE_KEY)) ])
     .then(([ currentDisplays, persistedDisplays ])  => {
 
       const currentDisplayNames = currentDisplays.map(prop("display"));
@@ -130,6 +132,7 @@ const initDisplays = () =>
 module.exports = {
   mirrorDisplays,
   configDisplay,
+  connectedDisplays,
   displays,
   initDisplays,
   persistCurrentConfig,

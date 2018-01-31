@@ -3,7 +3,12 @@
 const { exec } = require("node-exec-promise");
 
 const { forEach, map, filter, propEq } = require("ramda")
-const { displays, mirrorDisplays, persistCurrentConfig } = require("../video")
+const {
+  connectedDisplays,
+  displays,
+  mirrorDisplays,
+  persistCurrentConfig
+} = require("../video")
 
 const [_, bin, task, ...params] = process.argv
 
@@ -31,15 +36,22 @@ switch(task) {
     console.log("List of displays:")
     console.log("")
 
-    displays()
+    return displays()
+      .then(forEach(printDisplay))
+      .catch(console.error)
+  }
+  case "current": {
+    console.log("Current displays:")
+
+    return connectedDisplays()
       .then(forEach(printDisplay))
       .catch(console.error)
   }
   case "mirror": {
-    mirror()
+    return mirror()
   }
   case "save": {
-    persistCurrentConfig()
+    return persistCurrentConfig()
       .then(() => console.log("Displays preference saved!"))
   }
 }

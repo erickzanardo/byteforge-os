@@ -29,6 +29,9 @@ Plugin 'w0rp/ale'
 Bundle 'moll/vim-node'
 Bundle 'posva/vim-vue'
 Bundle 'dart-lang/dart-vim-plugin'
+Plugin 'Shougo/deoplete.nvim'
+Plugin 'artur-shaik/vim-javacomplete2'
+Plugin 'ervandew/supertab'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -195,3 +198,23 @@ set completeopt-=preview
 " Indent
 hi IndentGuidesOdd  ctermbg=black
 hi IndentGuidesEven ctermbg=darkgrey
+
+" Deoplete
+let g:deoplete#enable_at_startup = 1
+
+" Java Autocomplete
+autocmd FileType java setlocal omnifunc=javacomplete#Complete
+
+nmap <F4> <Plug>(JavaComplete-Imports-AddSmart)
+imap <F4> <Plug>(JavaComplete-Imports-AddSmart)
+
+nmap <F5> <Plug>(JavaComplete-Imports-Add)
+imap <F5> <Plug>(JavaComplete-Imports-Add)
+
+nmap <F6> <Plug>(JavaComplete-Imports-AddMissing)
+imap <F6> <Plug>(JavaComplete-Imports-AddMissing)
+
+nmap <F7> <Plug>(JavaComplete-Imports-RemoveUnused)
+imap <F7> <Plug>(JavaComplete-Imports-RemoveUnused)
+
+

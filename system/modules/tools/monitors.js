@@ -3,7 +3,7 @@
 const { exec } = require("node-exec-promise");
 
 const { forEach, map, filter, propEq } = require("ramda")
-const { displays, mirrorDisplays } = require("../video")
+const { displays, mirrorDisplays, persistCurrentConfig } = require("../video")
 
 const [_, bin, task, ...params] = process.argv
 
@@ -37,5 +37,9 @@ switch(task) {
   }
   case "mirror": {
     mirror()
+  }
+  case "save": {
+    persistCurrentConfig()
+      .then(() => console.log("Displays preference saved!"))
   }
 }

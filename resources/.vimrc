@@ -88,11 +88,9 @@ autocmd FileType css setlocal expandtab tabstop=2 shiftwidth=2
 autocmd FileType javascript setlocal expandtab tabstop=2 shiftwidth=2
 autocmd FileType json setlocal expandtab tabstop=2 shiftwidth=2
 autocmd FileType coffee setlocal expandtab tabstop=2 shiftwidth=2
-autocmd FileType yml setlocal expandtab tabstop=2 shiftwidth=2
+autocmd FileType yaml setlocal expandtab tabstop=2 shiftwidth=2
 autocmd FileType lua setlocal expandtab tabstop=2 shiftwidth=2
 autocmd FileType graphql setlocal expandtab tabstop=2 shiftwidth=2
-
-let g:EclimCompletionMethod = 'omnifunc'
 
 " gradle as groovy
 au BufNewFile,BufRead *.gradle setf groovy

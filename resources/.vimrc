@@ -30,7 +30,7 @@ Bundle 'moll/vim-node'
 Bundle 'posva/vim-vue'
 Bundle 'dart-lang/dart-vim-plugin'
 Plugin 'Shougo/deoplete.nvim'
-Plugin 'artur-shaik/vim-javacomplete2'
+Plugin 'airblade/vim-rooter'
 Plugin 'ervandew/supertab'
 
 call vundle#end()            " required
@@ -200,19 +200,11 @@ hi IndentGuidesEven ctermbg=darkgrey
 " Deoplete
 let g:deoplete#enable_at_startup = 1
 
-" Java Autocomplete
-autocmd FileType java setlocal omnifunc=javacomplete#Complete
+" Using relative path for paths autocomplete
+let g:deoplete#file#enable_buffer_path = 1
 
-nmap <F4> <Plug>(JavaComplete-Imports-AddSmart)
-imap <F4> <Plug>(JavaComplete-Imports-AddSmart)
+" Adjusting Deoplete tab order
+let g:SuperTabDefaultCompletionType = "<c-n>"
 
-nmap <F5> <Plug>(JavaComplete-Imports-Add)
-imap <F5> <Plug>(JavaComplete-Imports-Add)
-
-nmap <F6> <Plug>(JavaComplete-Imports-AddMissing)
-imap <F6> <Plug>(JavaComplete-Imports-AddMissing)
-
-nmap <F7> <Plug>(JavaComplete-Imports-RemoveUnused)
-imap <F7> <Plug>(JavaComplete-Imports-RemoveUnused)
-
-
+" Rooter
+let g:rooter_patterns = ["Rakefile", "pom.xml", "build.gradle", "package.json"]

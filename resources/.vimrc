@@ -1,40 +1,40 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin('~/.vim/plugged')
 
-Bundle 'scrooloose/nerdtree'
-Plugin 'ryanoasis/vim-devicons'
-Bundle 'kien/ctrlp.vim'
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-fugitive'
-Plugin 'ekalinin/Dockerfile.vim'
-Bundle 'leafgarland/typescript-vim'
-Plugin 'editorconfig/editorconfig-vim'
-Bundle 'freeo/vim-kalisi'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'derekwyatt/vim-scala'
-Plugin 'vim-airline/vim-airline'
-Bundle 'slim-template/vim-slim'
-Bundle 'nikvdp/ejs-syntax'
-Plugin 'jparise/vim-graphql'
-Plugin 'pangloss/vim-javascript'
-Plugin 'ap/vim-css-color'
-Plugin 'mxw/vim-jsx'
-Plugin 'flowtype/vim-flow'
-Plugin 'w0rp/ale'
-Bundle 'moll/vim-node'
-Bundle 'posva/vim-vue'
-Bundle 'dart-lang/dart-vim-plugin'
-Plugin 'Shougo/deoplete.nvim'
-Plugin 'airblade/vim-rooter'
-Plugin 'ervandew/supertab'
+Plug 'scrooloose/nerdtree'
+Plug 'ryanoasis/vim-devicons'
+Plug 'kien/ctrlp.vim'
+Plug 'vim-ruby/vim-ruby'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-fugitive'
+Plug 'ekalinin/Dockerfile.vim'
+Plug 'leafgarland/typescript-vim'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'freeo/vim-kalisi'
+Plug 'kchmck/vim-coffee-script'
+Plug 'derekwyatt/vim-scala'
+Plug 'vim-airline/vim-airline'
+Plug 'slim-template/vim-slim'
+Plug 'nikvdp/ejs-syntax'
+Plug 'jparise/vim-graphql'
+Plug 'pangloss/vim-javascript'
+Plug 'ap/vim-css-color'
+Plug 'mxw/vim-jsx'
+Plug 'flowtype/vim-flow'
+Plug 'w0rp/ale'
+Plug 'moll/vim-node'
+Plug 'posva/vim-vue'
+Plug 'dart-lang/dart-vim-plugin'
+Plug 'airblade/vim-rooter'
+Plug 'ervandew/supertab'
+Plug 'maralla/completor.vim'
 
-call vundle#end()            " required
-filetype plugin indent on    " required
+call plug#end()
 
 " Search highlight and searching as you type
 set hlsearch

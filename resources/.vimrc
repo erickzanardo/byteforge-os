@@ -5,6 +5,7 @@ filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+Plugin 'quabug/vim-gdscript'
 Bundle 'scrooloose/nerdtree'
 Plugin 'ryanoasis/vim-devicons'
 Bundle 'kien/ctrlp.vim'
@@ -76,6 +77,8 @@ let g:lightline = { 'colorscheme': 'wombat' }
 
 filetype plugin indent on
 
+
+autocmd FileType gdscript setlocal expandtab tabstop=2 shiftwidth=2
 autocmd FileType make setlocal expandtab tabstop=4 shiftwidth=4
 autocmd FileType sh setlocal expandtab tabstop=2 shiftwidth=2
 autocmd FileType html setlocal expandtab tabstop=2 shiftwidth=2

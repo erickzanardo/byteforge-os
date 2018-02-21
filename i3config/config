@@ -237,4 +237,19 @@ mode $recordmode {
 }
 bindsym $mod+g mode $recordmode
 
+# Basic Vim Keybinds
+bindsym --release $mod+Control+h exec xdotool key --clearmodifiers Left
+bindsym --release $mod+Control+j exec xdotool key --clearmodifiers Down
+bindsym --release $mod+Control+k exec xdotool key --clearmodifiers Up
+bindsym --release $mod+Control+l exec xdotool key --clearmodifiers Right
+
+bindsym --release $mod+Control+e exec xdotool key --clearmodifiers control+Right
+bindsym --release $mod+Control+b exec xdotool key --clearmodifiers control+Left
+
+bindsym --release $mod+Control+x exec xdotool key --clearmodifiers Delete
+bindsym --release $mod+Control+Shift+d exec xdotool key --clearmodifiers control+Shift+End+Delete
+# End Basic Vim Keybinds
+
+bindsym --release $mod+Shift+v exec ~/.vim-anywhere/bin/run
+
 exec i3 --force-xinerama -V >>~/.i3/i3log 2>&1

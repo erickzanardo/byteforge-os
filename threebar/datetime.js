@@ -3,7 +3,7 @@ module.exports = function(update) {
     var d = new Date();
     update("datetime", [
         "\uf017",
-        `${d.getHours().toString(2)}:${d.getMinutes().toString(2)}`,
+        `${d.getHours()}:${d.getMinutes()}`,
         "\uf073",
         [
           d.getDate(),

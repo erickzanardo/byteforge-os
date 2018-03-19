@@ -6,9 +6,6 @@ fi
 
 ~/.bfos/bin/bfregistervolume
 
-# Set the wallpaper
-~/.bfos/bin/bfwallpaper
-
 # Configure the keyboard
 setxkbmap -layout "br" -model "intl," -option "grp:shift_toggle"
 
@@ -25,6 +22,7 @@ dunst -config ~/.bfos/resources/dunstrc
 
 start-pulseaudio-x11
 
-~/.bfos/bin/bfnode ~/.bfos/system/run.js "sky/sky.start"
-
 ~/.bfos/bin/bfnode ~/.bfos/system/run.js "video.initDisplays"
+
+# Set the wallpaper
+~/.bfos/bin/bfwallpaper

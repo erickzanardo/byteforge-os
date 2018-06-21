@@ -12,11 +12,9 @@
 [plugins]
 [profiles]
   [[default]]
-    background_darkness = 0.93
-    background_image = None
     background_type = transparent
     cursor_color = "#0d5f09"
-    font = DroidSansMonoForPowerline Nerd Font 13
+    font = Hack NF 10
     foreground_color = "#00ff00"
     login_shell = True
     scrollback_infinite = True

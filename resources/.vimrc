@@ -33,6 +33,7 @@ Bundle 'dart-lang/dart-vim-plugin'
 Plugin 'Shougo/deoplete.nvim'
 Plugin 'airblade/vim-rooter'
 Plugin 'ervandew/supertab'
+Plugin 'skywind3000/asyncrun.vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -51,7 +52,6 @@ set background=dark
 set t_Co=256
 
 set encoding=utf8
-set guifont=Inconsolata\ for\ Powerline\ Plus\ Nerd\ File\ Types\ Plus\ Font\ Awesome\ 12
 
 set expandtab
 set tabstop=2
@@ -88,6 +88,7 @@ autocmd FileType typescript setlocal expandtab tabstop=2 shiftwidth=2
 autocmd FileType java setlocal expandtab tabstop=4 shiftwidth=4
 autocmd FileType ruby setlocal expandtab tabstop=2 shiftwidth=2
 autocmd FileType css setlocal expandtab tabstop=2 shiftwidth=2
+autocmd FileType scss setlocal expandtab tabstop=2 shiftwidth=2
 autocmd FileType javascript setlocal expandtab tabstop=2 shiftwidth=2
 autocmd FileType json setlocal expandtab tabstop=2 shiftwidth=2
 autocmd FileType coffee setlocal expandtab tabstop=2 shiftwidth=2
@@ -163,22 +164,9 @@ endif
 " ctrlp ignore
 set wildignore+=node_modules
 
-function! s:ExecuteInShell(command)
-  let command = join(map(split(a:command), 'expand(v:val)'))
-  let winnr = bufwinnr('^' . command . '$')
-  silent! execute  winnr < 0 ? 'botright new ' . fnameescape(command) : winnr . 'wincmd w'
-  setlocal buftype=nowrite bufhidden=wipe nobuflisted noswapfile nowrap number
-  echo 'Running ' . command . '...'
-  silent! execute 'silent %!'. command
-  silent! execute 'resize ' . line('$')
-  silent! redraw
-  silent! execute 'au BufUnload <buffer> execute bufwinnr(' . bufnr('#') . ') . ''wincmd w'''
-  silent! execute 'nnoremap <silent> <buffer> <LocalLeader>r :call <SID>ExecuteInShell(''' . command . ''')<CR>'
-  echo 'Shell command ' . command . ' executed.'
-endfunction
-command! -complete=shellcmd -nargs=+ Shell call s:ExecuteInShell(<q-args>)
-command! -complete=file -nargs=* Npm call s:ExecuteInShell('npm '.<q-args>)
-command! -complete=file -nargs=* Curl call s:ExecuteInShell('curl '.<q-args>)
+" Shell Shortcuts
+command! -complete=file -nargs=* Npm :AsyncRun npm <args>
+command! -complete=file -nargs=* Yarn :AsyncRun yarn <args>
 
 " Trailing whitespaces
 highlight ExtraWhitespace ctermbg=red guibg=red
@@ -193,8 +181,8 @@ let g:ale_linters = {
 \   'javascript': ['eslint'],
 \}
 
-" YouCompleteMe
-set completeopt-=preview
+" Vue vim disabling pre processors as it really slows down vim
+let g:vue_disable_pre_processors=1
 
 " Indent
 hi IndentGuidesOdd  ctermbg=black

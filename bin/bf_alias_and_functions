@@ -21,6 +21,11 @@ function drep {
            --exclude-dir=build \
            --exclude-dir=dist \
            --exclude-dir=coverage \
+           --exclude-dir=.gradle \
+           --exclude-dir=out \
+           --exclude-dir=.idea \
+           --exclude=yarn.lock \
+           --exclude=*.log \
            $1
 }
 

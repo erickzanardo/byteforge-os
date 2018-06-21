@@ -165,6 +165,7 @@ endif
 set wildignore+=node_modules
 
 " Shell Shortcuts
+let g:asyncrun_open = 8
 command! -complete=file -nargs=* Npm :AsyncRun npm <args>
 command! -complete=file -nargs=* Yarn :AsyncRun yarn <args>
 
